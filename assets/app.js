@@ -222,6 +222,14 @@ async function initialize() {
     throw new Error(`Unable to load demo data (${response.status}).`);
   }
   scenarios = await response.json();
+
+  Object.values(scenarios).forEach((scenario) => {
+      scenario.turns = scenario.turns || [];
+      scenario.entities = scenario.entities || [];
+      scenario.policies = scenario.policies || [];
+      scenario.query = scenario.query || {};
+  });
+  
   dom.tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
       activateScenario(tab.dataset.scenario);
