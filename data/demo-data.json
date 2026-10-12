@@ -1,0 +1,3768 @@
+{
+  "clean": {
+    "kicker": "Condition A",
+    "title": "Clean two-speaker memory trace",
+    "protocol": "History and query use clean synthetic speech. The excerpt is a fixed multi-evidence case with both cross-user and same-user distractor turns.",
+    "queryNote": "Fixed example; post-hoc entity annotations are shown for interpretability.",
+    "selection": "A fixed multi-evidence LoCoMo-ID example with one supporting fact, cross-user distractors, and later same-user returns.",
+    "source": "Eleven selected history turns across four sessions, plus one first-person query from the clean LoCoMo-ID condition.",
+    "evidenceScope": "Turn labels are fixed walkthrough annotations, not predictions generated in the browser or a substitute for aggregate evaluation.",
+    "policyTraces": {
+      "fixed": {
+        "id": "fixed",
+        "label": "Fixed",
+        "entities": [
+          {
+            "id": "spk_1",
+            "label": "E1"
+          },
+          {
+            "id": "spk_2",
+            "label": "E2"
+          },
+          {
+            "id": "spk_3",
+            "label": "E3"
+          },
+          {
+            "id": "spk_4",
+            "label": "E4"
+          },
+          {
+            "id": "spk_5",
+            "label": "E5"
+          }
+        ],
+        "entityCount": 5,
+        "turns": [
+          {
+            "id": "D2:6",
+            "session": "S2",
+            "text": "That's great. Taking time for yourself is so important. You're doing an awesome job looking after yourself and your family!",
+            "audio": "audio/clean/turn-01.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.61,
+            "margin": null,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D2:7",
+            "session": "S2",
+            "text": "It's still a work in progress, but I'm doing my best. My kids are so excited about summer break!",
+            "audio": "audio/clean/turn-02.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.723,
+            "margin": null,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D2:8",
+            "session": "S2",
+            "text": "Researching adoption agencies — it's been a dream to have a family and give a loving home to kids who need it.",
+            "audio": "audio/clean/turn-03.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.625,
+            "margin": null,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D3:10",
+            "session": "S3",
+            "text": "Your courage is inspiring. I want to be courageous for my family — they motivate me and give me love.",
+            "audio": "audio/clean/turn-04.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.68,
+            "margin": null,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D3:11",
+            "session": "S3",
+            "text": "My friends, family and mentors are my rocks — they motivate me and give me the strength to push on.",
+            "audio": "audio/clean/turn-05.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.683,
+            "margin": null,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D3:22",
+            "session": "S3",
+            "text": "I cherish time with family. It's when I really feel alive and happy.",
+            "audio": "audio/clean/turn-06.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.788,
+            "margin": null,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D3:23",
+            "session": "S3",
+            "text": "Hanging with loved ones is amazing and brings so much happiness. Those moments really make me thankful.",
+            "audio": "audio/clean/turn-07.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.66,
+            "margin": null,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D10:1",
+            "session": "S10",
+            "text": "Just wanted to say hi!",
+            "audio": "audio/clean/turn-08.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.553,
+            "margin": 0.027,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D10:2",
+            "session": "S10",
+            "text": "Good to talk to you again. What's up? Anything new since last time?",
+            "audio": "audio/clean/turn-09.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.751,
+            "margin": null,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D15:13",
+            "session": "S15",
+            "text": "Wow! Did you see that band?",
+            "audio": "audio/clean/turn-10.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.519,
+            "margin": null,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D15:14",
+            "session": "S15",
+            "text": "Yeah, that pic was from a show I went to. It was so much fun and reminded me of how music brings us together.",
+            "audio": "audio/clean/turn-11.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.701,
+            "margin": null,
+            "stateAction": "Center fixed"
+          }
+        ],
+        "metrics": {
+          "structure": "97.04% B³ F1",
+          "access": "0 wrong auth.",
+          "qa": "71.41% gated QA"
+        },
+        "query": {
+          "text": "What did I research?",
+          "audio": "audio/clean/query.wav",
+          "assigned": false,
+          "entity": null,
+          "similarity": 0.416,
+          "margin": 0.03,
+          "evidence": "No memory was retrieved.",
+          "answer": "I can't access personal memories until I can verify the current speaker.",
+          "judge": null
+        }
+      },
+      "update": {
+        "id": "update",
+        "label": "Update",
+        "entities": [
+          {
+            "id": "spk_1",
+            "label": "E1"
+          },
+          {
+            "id": "spk_2",
+            "label": "E2"
+          }
+        ],
+        "entityCount": 2,
+        "turns": [
+          {
+            "id": "D2:6",
+            "session": "S2",
+            "text": "That's great. Taking time for yourself is so important. You're doing an awesome job looking after yourself and your family!",
+            "audio": "audio/clean/turn-01.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.901,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D2:7",
+            "session": "S2",
+            "text": "It's still a work in progress, but I'm doing my best. My kids are so excited about summer break!",
+            "audio": "audio/clean/turn-02.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.918,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D2:8",
+            "session": "S2",
+            "text": "Researching adoption agencies — it's been a dream to have a family and give a loving home to kids who need it.",
+            "audio": "audio/clean/turn-03.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.902,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:10",
+            "session": "S3",
+            "text": "Your courage is inspiring. I want to be courageous for my family — they motivate me and give me love.",
+            "audio": "audio/clean/turn-04.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.89,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:11",
+            "session": "S3",
+            "text": "My friends, family and mentors are my rocks — they motivate me and give me the strength to push on.",
+            "audio": "audio/clean/turn-05.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.917,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:22",
+            "session": "S3",
+            "text": "I cherish time with family. It's when I really feel alive and happy.",
+            "audio": "audio/clean/turn-06.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.9,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:23",
+            "session": "S3",
+            "text": "Hanging with loved ones is amazing and brings so much happiness. Those moments really make me thankful.",
+            "audio": "audio/clean/turn-07.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.905,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D10:1",
+            "session": "S10",
+            "text": "Just wanted to say hi!",
+            "audio": "audio/clean/turn-08.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.78,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D10:2",
+            "session": "S10",
+            "text": "Good to talk to you again. What's up? Anything new since last time?",
+            "audio": "audio/clean/turn-09.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.87,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D15:13",
+            "session": "S15",
+            "text": "Wow! Did you see that band?",
+            "audio": "audio/clean/turn-10.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.617,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D15:14",
+            "session": "S15",
+            "text": "Yeah, that pic was from a show I went to. It was so much fun and reminded me of how music brings us together.",
+            "audio": "audio/clean/turn-11.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.89,
+            "margin": null,
+            "stateAction": "Center updated"
+          }
+        ],
+        "metrics": {
+          "structure": "98.41% B³ F1",
+          "access": "115 wrong auth.",
+          "qa": "73.43% gated QA"
+        },
+        "query": {
+          "text": "What did I research?",
+          "audio": "audio/clean/query.wav",
+          "assigned": true,
+          "entity": "E1",
+          "similarity": 0.669,
+          "margin": 0.422,
+          "evidence": "spk_1 said she is off to go do research.",
+          "answer": "Adoption agencies",
+          "judge": 1
+        }
+      },
+      "gated": {
+        "id": "gated",
+        "label": "Gated Update",
+        "entities": [
+          {
+            "id": "spk_1",
+            "label": "E1"
+          },
+          {
+            "id": "spk_2",
+            "label": "E2"
+          }
+        ],
+        "entityCount": 2,
+        "turns": [
+          {
+            "id": "D2:6",
+            "session": "S2",
+            "text": "That's great. Taking time for yourself is so important. You're doing an awesome job looking after yourself and your family!",
+            "audio": "audio/clean/turn-01.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.886,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D2:7",
+            "session": "S2",
+            "text": "It's still a work in progress, but I'm doing my best. My kids are so excited about summer break!",
+            "audio": "audio/clean/turn-02.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.918,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D2:8",
+            "session": "S2",
+            "text": "Researching adoption agencies — it's been a dream to have a family and give a loving home to kids who need it.",
+            "audio": "audio/clean/turn-03.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.893,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:10",
+            "session": "S3",
+            "text": "Your courage is inspiring. I want to be courageous for my family — they motivate me and give me love.",
+            "audio": "audio/clean/turn-04.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.89,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:11",
+            "session": "S3",
+            "text": "My friends, family and mentors are my rocks — they motivate me and give me the strength to push on.",
+            "audio": "audio/clean/turn-05.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.916,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:22",
+            "session": "S3",
+            "text": "I cherish time with family. It's when I really feel alive and happy.",
+            "audio": "audio/clean/turn-06.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.9,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:23",
+            "session": "S3",
+            "text": "Hanging with loved ones is amazing and brings so much happiness. Those moments really make me thankful.",
+            "audio": "audio/clean/turn-07.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.903,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D10:1",
+            "session": "S10",
+            "text": "Just wanted to say hi!",
+            "audio": "audio/clean/turn-08.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.778,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D10:2",
+            "session": "S10",
+            "text": "Good to talk to you again. What's up? Anything new since last time?",
+            "audio": "audio/clean/turn-09.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.87,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D15:13",
+            "session": "S15",
+            "text": "Wow! Did you see that band?",
+            "audio": "audio/clean/turn-10.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.616,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D15:14",
+            "session": "S15",
+            "text": "Yeah, that pic was from a show I went to. It was so much fun and reminded me of how music brings us together.",
+            "audio": "audio/clean/turn-11.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.89,
+            "margin": null,
+            "stateAction": "Center updated"
+          }
+        ],
+        "metrics": {
+          "structure": "99.54% B³ F1",
+          "access": "0 wrong auth.",
+          "qa": "75.27% gated QA"
+        },
+        "query": {
+          "text": "What did I research?",
+          "audio": "audio/clean/query.wav",
+          "assigned": true,
+          "entity": "E1",
+          "similarity": 0.669,
+          "margin": 0.422,
+          "evidence": "spk_1 said she is off to go do research.",
+          "answer": "Adoption agencies",
+          "judge": 1
+        }
+      },
+      "knn": {
+        "id": "knn",
+        "label": "All-exemplar KNN",
+        "entities": [
+          {
+            "id": "spk_1",
+            "label": "E1"
+          },
+          {
+            "id": "spk_2",
+            "label": "E2"
+          }
+        ],
+        "entityCount": 2,
+        "turns": [
+          {
+            "id": "D2:6",
+            "session": "S2",
+            "text": "That's great. Taking time for yourself is so important. You're doing an awesome job looking after yourself and your family!",
+            "audio": "audio/clean/turn-01.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.839,
+            "margin": null,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D2:7",
+            "session": "S2",
+            "text": "It's still a work in progress, but I'm doing my best. My kids are so excited about summer break!",
+            "audio": "audio/clean/turn-02.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.862,
+            "margin": null,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D2:8",
+            "session": "S2",
+            "text": "Researching adoption agencies — it's been a dream to have a family and give a loving home to kids who need it.",
+            "audio": "audio/clean/turn-03.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.837,
+            "margin": null,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D3:10",
+            "session": "S3",
+            "text": "Your courage is inspiring. I want to be courageous for my family — they motivate me and give me love.",
+            "audio": "audio/clean/turn-04.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.862,
+            "margin": null,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D3:11",
+            "session": "S3",
+            "text": "My friends, family and mentors are my rocks — they motivate me and give me the strength to push on.",
+            "audio": "audio/clean/turn-05.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.884,
+            "margin": null,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D3:22",
+            "session": "S3",
+            "text": "I cherish time with family. It's when I really feel alive and happy.",
+            "audio": "audio/clean/turn-06.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.848,
+            "margin": null,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D3:23",
+            "session": "S3",
+            "text": "Hanging with loved ones is amazing and brings so much happiness. Those moments really make me thankful.",
+            "audio": "audio/clean/turn-07.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.88,
+            "margin": null,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D10:1",
+            "session": "S10",
+            "text": "Just wanted to say hi!",
+            "audio": "audio/clean/turn-08.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.753,
+            "margin": null,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D10:2",
+            "session": "S10",
+            "text": "Good to talk to you again. What's up? Anything new since last time?",
+            "audio": "audio/clean/turn-09.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.853,
+            "margin": null,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D15:13",
+            "session": "S15",
+            "text": "Wow! Did you see that band?",
+            "audio": "audio/clean/turn-10.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.629,
+            "margin": null,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D15:14",
+            "session": "S15",
+            "text": "Yeah, that pic was from a show I went to. It was so much fun and reminded me of how music brings us together.",
+            "audio": "audio/clean/turn-11.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.873,
+            "margin": null,
+            "stateAction": "Exemplar appended"
+          }
+        ],
+        "metrics": {
+          "structure": "98.51% B³ F1",
+          "access": "116 wrong auth.",
+          "qa": "73.64% gated QA"
+        },
+        "query": {
+          "text": "What did I research?",
+          "audio": "audio/clean/query.wav",
+          "assigned": true,
+          "entity": "E1",
+          "similarity": 0.679,
+          "margin": 0.393,
+          "evidence": "spk_1 said she is off to go do research.",
+          "answer": "Adoption agencies",
+          "judge": 1
+        }
+      },
+      "parakeet-fixed": {
+        "id": "parakeet-fixed",
+        "label": "Parakeet + Fixed",
+        "entities": [
+          {
+            "id": "spk_1",
+            "label": "E1"
+          },
+          {
+            "id": "spk_2",
+            "label": "E2"
+          }
+        ],
+        "entityCount": 2,
+        "turns": [
+          {
+            "id": "D2:6",
+            "session": "S2",
+            "text": "That's great. Taking time for yourself is so important. You're doing an awesome job looking after yourself and your family!",
+            "audio": "audio/clean/turn-01.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.936,
+            "margin": 0.393,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D2:7",
+            "session": "S2",
+            "text": "It's still a work in progress, but I'm doing my best. My kids are so excited about summer break!",
+            "audio": "audio/clean/turn-02.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.915,
+            "margin": 0.499,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D2:8",
+            "session": "S2",
+            "text": "Researching adoption agencies — it's been a dream to have a family and give a loving home to kids who need it.",
+            "audio": "audio/clean/turn-03.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.936,
+            "margin": 0.393,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D3:10",
+            "session": "S3",
+            "text": "Your courage is inspiring. I want to be courageous for my family — they motivate me and give me love.",
+            "audio": "audio/clean/turn-04.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.917,
+            "margin": 0.503,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D3:11",
+            "session": "S3",
+            "text": "My friends, family and mentors are my rocks — they motivate me and give me the strength to push on.",
+            "audio": "audio/clean/turn-05.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.948,
+            "margin": 0.335,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D3:22",
+            "session": "S3",
+            "text": "I cherish time with family. It's when I really feel alive and happy.",
+            "audio": "audio/clean/turn-06.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.917,
+            "margin": 0.503,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D3:23",
+            "session": "S3",
+            "text": "Hanging with loved ones is amazing and brings so much happiness. Those moments really make me thankful.",
+            "audio": "audio/clean/turn-07.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.948,
+            "margin": 0.335,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D10:1",
+            "session": "S10",
+            "text": "Just wanted to say hi!",
+            "audio": "audio/clean/turn-08.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.913,
+            "margin": 0.401,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D10:2",
+            "session": "S10",
+            "text": "Good to talk to you again. What's up? Anything new since last time?",
+            "audio": "audio/clean/turn-09.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.94,
+            "margin": 0.413,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D15:13",
+            "session": "S15",
+            "text": "Wow! Did you see that band?",
+            "audio": "audio/clean/turn-10.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.95,
+            "margin": 0.38,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D15:14",
+            "session": "S15",
+            "text": "Yeah, that pic was from a show I went to. It was so much fun and reminded me of how music brings us together.",
+            "audio": "audio/clean/turn-11.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.95,
+            "margin": 0.38,
+            "stateAction": "Center fixed"
+          }
+        ],
+        "metrics": {
+          "structure": "76.96% B³ F1",
+          "access": "273 wrong auth.",
+          "qa": "68.08% gated QA"
+        },
+        "query": {
+          "text": "What did I research?",
+          "audio": "audio/clean/query.wav",
+          "assigned": true,
+          "entity": "E1",
+          "similarity": 0.638,
+          "margin": 0.226,
+          "evidence": "spk_1 is going to do research.",
+          "answer": "adoption agencies",
+          "judge": 1
+        }
+      },
+      "parakeet-update": {
+        "id": "parakeet-update",
+        "label": "Parakeet + Update",
+        "entities": [
+          {
+            "id": "spk_1",
+            "label": "E1"
+          },
+          {
+            "id": "spk_2",
+            "label": "E2"
+          }
+        ],
+        "entityCount": 2,
+        "turns": [
+          {
+            "id": "D2:6",
+            "session": "S2",
+            "text": "That's great. Taking time for yourself is so important. You're doing an awesome job looking after yourself and your family!",
+            "audio": "audio/clean/turn-01.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.936,
+            "margin": 0.393,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D2:7",
+            "session": "S2",
+            "text": "It's still a work in progress, but I'm doing my best. My kids are so excited about summer break!",
+            "audio": "audio/clean/turn-02.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.915,
+            "margin": 0.499,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D2:8",
+            "session": "S2",
+            "text": "Researching adoption agencies — it's been a dream to have a family and give a loving home to kids who need it.",
+            "audio": "audio/clean/turn-03.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.936,
+            "margin": 0.393,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:10",
+            "session": "S3",
+            "text": "Your courage is inspiring. I want to be courageous for my family — they motivate me and give me love.",
+            "audio": "audio/clean/turn-04.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.97,
+            "margin": 0.623,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:11",
+            "session": "S3",
+            "text": "My friends, family and mentors are my rocks — they motivate me and give me the strength to push on.",
+            "audio": "audio/clean/turn-05.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.973,
+            "margin": 0.471,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:22",
+            "session": "S3",
+            "text": "I cherish time with family. It's when I really feel alive and happy.",
+            "audio": "audio/clean/turn-06.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.97,
+            "margin": 0.623,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:23",
+            "session": "S3",
+            "text": "Hanging with loved ones is amazing and brings so much happiness. Those moments really make me thankful.",
+            "audio": "audio/clean/turn-07.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.973,
+            "margin": 0.471,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D10:1",
+            "session": "S10",
+            "text": "Just wanted to say hi!",
+            "audio": "audio/clean/turn-08.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.968,
+            "margin": 0.649,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D10:2",
+            "session": "S10",
+            "text": "Good to talk to you again. What's up? Anything new since last time?",
+            "audio": "audio/clean/turn-09.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.985,
+            "margin": 0.499,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D15:13",
+            "session": "S15",
+            "text": "Wow! Did you see that band?",
+            "audio": "audio/clean/turn-10.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.971,
+            "margin": 0.441,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D15:14",
+            "session": "S15",
+            "text": "Yeah, that pic was from a show I went to. It was so much fun and reminded me of how music brings us together.",
+            "audio": "audio/clean/turn-11.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.971,
+            "margin": 0.441,
+            "stateAction": "Center updated"
+          }
+        ],
+        "metrics": {
+          "structure": "77.06% B³ F1",
+          "access": "272 wrong auth.",
+          "qa": "68.25% gated QA"
+        },
+        "query": {
+          "text": "What did I research?",
+          "audio": "audio/clean/query.wav",
+          "assigned": true,
+          "entity": "E1",
+          "similarity": 0.671,
+          "margin": 0.381,
+          "evidence": "spk_1 is going to do research.",
+          "answer": "adoption agencies",
+          "judge": 1
+        }
+      },
+      "parakeet-gated": {
+        "id": "parakeet-gated",
+        "label": "Parakeet + Gated Update",
+        "entities": [
+          {
+            "id": "spk_1",
+            "label": "E1"
+          },
+          {
+            "id": "spk_2",
+            "label": "E2"
+          }
+        ],
+        "entityCount": 2,
+        "turns": [
+          {
+            "id": "D2:6",
+            "session": "S2",
+            "text": "That's great. Taking time for yourself is so important. You're doing an awesome job looking after yourself and your family!",
+            "audio": "audio/clean/turn-01.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.936,
+            "margin": 0.393,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D2:7",
+            "session": "S2",
+            "text": "It's still a work in progress, but I'm doing my best. My kids are so excited about summer break!",
+            "audio": "audio/clean/turn-02.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.915,
+            "margin": 0.499,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D2:8",
+            "session": "S2",
+            "text": "Researching adoption agencies — it's been a dream to have a family and give a loving home to kids who need it.",
+            "audio": "audio/clean/turn-03.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.936,
+            "margin": 0.393,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:10",
+            "session": "S3",
+            "text": "Your courage is inspiring. I want to be courageous for my family — they motivate me and give me love.",
+            "audio": "audio/clean/turn-04.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.97,
+            "margin": 0.623,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:11",
+            "session": "S3",
+            "text": "My friends, family and mentors are my rocks — they motivate me and give me the strength to push on.",
+            "audio": "audio/clean/turn-05.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.973,
+            "margin": 0.471,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:22",
+            "session": "S3",
+            "text": "I cherish time with family. It's when I really feel alive and happy.",
+            "audio": "audio/clean/turn-06.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.97,
+            "margin": 0.623,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:23",
+            "session": "S3",
+            "text": "Hanging with loved ones is amazing and brings so much happiness. Those moments really make me thankful.",
+            "audio": "audio/clean/turn-07.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.973,
+            "margin": 0.471,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D10:1",
+            "session": "S10",
+            "text": "Just wanted to say hi!",
+            "audio": "audio/clean/turn-08.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.968,
+            "margin": 0.649,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D10:2",
+            "session": "S10",
+            "text": "Good to talk to you again. What's up? Anything new since last time?",
+            "audio": "audio/clean/turn-09.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.985,
+            "margin": 0.499,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D15:13",
+            "session": "S15",
+            "text": "Wow! Did you see that band?",
+            "audio": "audio/clean/turn-10.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.971,
+            "margin": 0.441,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D15:14",
+            "session": "S15",
+            "text": "Yeah, that pic was from a show I went to. It was so much fun and reminded me of how music brings us together.",
+            "audio": "audio/clean/turn-11.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.971,
+            "margin": 0.441,
+            "stateAction": "Center updated"
+          }
+        ],
+        "metrics": {
+          "structure": "77.06% B³ F1",
+          "access": "272 wrong auth.",
+          "qa": "68.25% gated QA"
+        },
+        "query": {
+          "text": "What did I research?",
+          "audio": "audio/clean/query.wav",
+          "assigned": true,
+          "entity": "E1",
+          "similarity": 0.671,
+          "margin": 0.381,
+          "evidence": "spk_1 is going to do research.",
+          "answer": "adoption agencies",
+          "judge": 1
+        }
+      },
+      "parakeet-knn": {
+        "id": "parakeet-knn",
+        "label": "Parakeet + KNN",
+        "entities": [
+          {
+            "id": "spk_1",
+            "label": "E1"
+          },
+          {
+            "id": "spk_2",
+            "label": "E2"
+          }
+        ],
+        "entityCount": 2,
+        "turns": [
+          {
+            "id": "D2:6",
+            "session": "S2",
+            "text": "That's great. Taking time for yourself is so important. You're doing an awesome job looking after yourself and your family!",
+            "audio": "audio/clean/turn-01.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.936,
+            "margin": 0.393,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D2:7",
+            "session": "S2",
+            "text": "It's still a work in progress, but I'm doing my best. My kids are so excited about summer break!",
+            "audio": "audio/clean/turn-02.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.915,
+            "margin": 0.499,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D2:8",
+            "session": "S2",
+            "text": "Researching adoption agencies — it's been a dream to have a family and give a loving home to kids who need it.",
+            "audio": "audio/clean/turn-03.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.936,
+            "margin": 0.393,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D3:10",
+            "session": "S3",
+            "text": "Your courage is inspiring. I want to be courageous for my family — they motivate me and give me love.",
+            "audio": "audio/clean/turn-04.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.949,
+            "margin": 0.608,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D3:11",
+            "session": "S3",
+            "text": "My friends, family and mentors are my rocks — they motivate me and give me the strength to push on.",
+            "audio": "audio/clean/turn-05.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.957,
+            "margin": 0.466,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D3:22",
+            "session": "S3",
+            "text": "I cherish time with family. It's when I really feel alive and happy.",
+            "audio": "audio/clean/turn-06.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.949,
+            "margin": 0.608,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D3:23",
+            "session": "S3",
+            "text": "Hanging with loved ones is amazing and brings so much happiness. Those moments really make me thankful.",
+            "audio": "audio/clean/turn-07.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.957,
+            "margin": 0.466,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D10:1",
+            "session": "S10",
+            "text": "Just wanted to say hi!",
+            "audio": "audio/clean/turn-08.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.962,
+            "margin": 0.578,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D10:2",
+            "session": "S10",
+            "text": "Good to talk to you again. What's up? Anything new since last time?",
+            "audio": "audio/clean/turn-09.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.973,
+            "margin": 0.438,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D15:13",
+            "session": "S15",
+            "text": "Wow! Did you see that band?",
+            "audio": "audio/clean/turn-10.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.966,
+            "margin": 0.374,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D15:14",
+            "session": "S15",
+            "text": "Yeah, that pic was from a show I went to. It was so much fun and reminded me of how music brings us together.",
+            "audio": "audio/clean/turn-11.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.966,
+            "margin": 0.374,
+            "stateAction": "Exemplar appended"
+          }
+        ],
+        "metrics": {
+          "structure": "77.09% B³ F1",
+          "access": "274 wrong auth.",
+          "qa": "68.10% gated QA"
+        },
+        "query": {
+          "text": "What did I research?",
+          "audio": "audio/clean/query.wav",
+          "assigned": true,
+          "entity": "E1",
+          "similarity": 0.673,
+          "margin": 0.316,
+          "evidence": "spk_1 is going to do research.",
+          "answer": "adoption agencies",
+          "judge": 1
+        }
+      }
+    }
+  },
+  "spatial": {
+    "kicker": "Condition B",
+    "title": "Session-shifted history with a held-fixed query",
+    "protocol": "The same history text is rendered with session-dependent room, device, gain, and noise shifts. The spoken query remains clean by design, isolating the effect of history-time routing on downstream QA.",
+    "queryNote": "The query audio is intentionally identical to the clean case; only history audio changes.",
+    "selection": "The clean excerpt is paired turn-for-turn with its session-shifted history realization, so only the history recording condition changes.",
+    "source": "Eleven matched history turns under session-dependent acoustic shift; the first-person query is intentionally held fixed.",
+    "evidenceScope": "Policy metrics summarize the reported full spatial condition: 30 collections, 60 collection-local gold speakers, and 4,113 speaker-sensitive queries.",
+    "policyTraces": {
+      "fixed": {
+        "id": "fixed",
+        "label": "Fixed",
+        "entities": [
+          {
+            "id": "spk_1",
+            "label": "E1"
+          },
+          {
+            "id": "spk_2",
+            "label": "E2"
+          },
+          {
+            "id": "spk_3",
+            "label": "E3"
+          },
+          {
+            "id": "spk_4",
+            "label": "E4"
+          },
+          {
+            "id": "spk_5",
+            "label": "E5"
+          },
+          {
+            "id": "spk_6",
+            "label": "E6"
+          },
+          {
+            "id": "spk_7",
+            "label": "E7"
+          },
+          {
+            "id": "spk_8",
+            "label": "E8"
+          },
+          {
+            "id": "spk_9",
+            "label": "E9"
+          },
+          {
+            "id": "spk_10",
+            "label": "E10"
+          },
+          {
+            "id": "spk_11",
+            "label": "E11"
+          },
+          {
+            "id": "spk_12",
+            "label": "E12"
+          }
+        ],
+        "entityCount": 12,
+        "turns": [
+          {
+            "id": "D2:6",
+            "session": "S2",
+            "text": "That's great. Taking time for yourself is so important. You're doing an awesome job looking after yourself and your family!",
+            "audio": "audio/spatial/turn-01.wav",
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.684,
+            "margin": 0.131,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D2:7",
+            "session": "S2",
+            "text": "It's still a work in progress, but I'm doing my best. My kids are so excited about summer break!",
+            "audio": "audio/spatial/turn-02.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.676,
+            "margin": null,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D2:8",
+            "session": "S2",
+            "text": "Researching adoption agencies — it's been a dream to have a family and give a loving home to kids who need it.",
+            "audio": "audio/spatial/turn-03.wav",
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.71,
+            "margin": 0.172,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D3:10",
+            "session": "S3",
+            "text": "Your courage is inspiring. I want to be courageous for my family — they motivate me and give me love.",
+            "audio": "audio/spatial/turn-04.wav",
+            "entity": "E4",
+            "action": "link",
+            "similarity": 0.747,
+            "margin": 0.136,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D3:11",
+            "session": "S3",
+            "text": "My friends, family and mentors are my rocks — they motivate me and give me the strength to push on.",
+            "audio": "audio/spatial/turn-05.wav",
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.693,
+            "margin": 0.124,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D3:22",
+            "session": "S3",
+            "text": "I cherish time with family. It's when I really feel alive and happy.",
+            "audio": "audio/spatial/turn-06.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.731,
+            "margin": 0.142,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D3:23",
+            "session": "S3",
+            "text": "Hanging with loved ones is amazing and brings so much happiness. Those moments really make me thankful.",
+            "audio": "audio/spatial/turn-07.wav",
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.676,
+            "margin": 0.156,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D10:1",
+            "session": "S10",
+            "text": "Just wanted to say hi!",
+            "audio": "audio/spatial/turn-08.wav",
+            "entity": "E5",
+            "action": "link",
+            "similarity": 0.661,
+            "margin": null,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D10:2",
+            "session": "S10",
+            "text": "Good to talk to you again. What's up? Anything new since last time?",
+            "audio": "audio/spatial/turn-09.wav",
+            "entity": "E6",
+            "action": "link",
+            "similarity": 0.762,
+            "margin": 0.249,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D15:13",
+            "session": "S15",
+            "text": "Wow! Did you see that band?",
+            "audio": "audio/spatial/turn-10.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.546,
+            "margin": null,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D15:14",
+            "session": "S15",
+            "text": "Yeah, that pic was from a show I went to. It was so much fun and reminded me of how music brings us together.",
+            "audio": "audio/spatial/turn-11.wav",
+            "entity": "E4",
+            "action": "link",
+            "similarity": 0.753,
+            "margin": 0.12,
+            "stateAction": "Center fixed"
+          }
+        ],
+        "metrics": {
+          "structure": "74.18% B³ F1",
+          "access": "1 wrong auth.",
+          "qa": "60.15% gated QA"
+        },
+        "query": {
+          "text": "What is my identity?",
+          "audio": null,
+          "assigned": false,
+          "entity": null,
+          "similarity": 0.432,
+          "margin": 0.001,
+          "evidence": "No memory was retrieved.",
+          "answer": "I can't access personal memories until I can verify the current speaker.",
+          "judge": null
+        }
+      },
+      "update": {
+        "id": "update",
+        "label": "Update",
+        "entities": [
+          {
+            "id": "spk_1",
+            "label": "E1"
+          },
+          {
+            "id": "spk_2",
+            "label": "E2"
+          },
+          {
+            "id": "spk_3",
+            "label": "E3"
+          },
+          {
+            "id": "spk_4",
+            "label": "E4"
+          }
+        ],
+        "entityCount": 4,
+        "turns": [
+          {
+            "id": "D2:6",
+            "session": "S2",
+            "text": "That's great. Taking time for yourself is so important. You're doing an awesome job looking after yourself and your family!",
+            "audio": "audio/spatial/turn-01.wav",
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.876,
+            "margin": 0.322,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D2:7",
+            "session": "S2",
+            "text": "It's still a work in progress, but I'm doing my best. My kids are so excited about summer break!",
+            "audio": "audio/spatial/turn-02.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.88,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D2:8",
+            "session": "S2",
+            "text": "Researching adoption agencies — it's been a dream to have a family and give a loving home to kids who need it.",
+            "audio": "audio/spatial/turn-03.wav",
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.872,
+            "margin": 0.334,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:10",
+            "session": "S3",
+            "text": "Your courage is inspiring. I want to be courageous for my family — they motivate me and give me love.",
+            "audio": "audio/spatial/turn-04.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.856,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:11",
+            "session": "S3",
+            "text": "My friends, family and mentors are my rocks — they motivate me and give me the strength to push on.",
+            "audio": "audio/spatial/turn-05.wav",
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.875,
+            "margin": 0.306,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:22",
+            "session": "S3",
+            "text": "I cherish time with family. It's when I really feel alive and happy.",
+            "audio": "audio/spatial/turn-06.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.869,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:23",
+            "session": "S3",
+            "text": "Hanging with loved ones is amazing and brings so much happiness. Those moments really make me thankful.",
+            "audio": "audio/spatial/turn-07.wav",
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.861,
+            "margin": 0.341,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D10:1",
+            "session": "S10",
+            "text": "Just wanted to say hi!",
+            "audio": "audio/spatial/turn-08.wav",
+            "entity": "E4",
+            "action": "link",
+            "similarity": 0.803,
+            "margin": 0.177,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D10:2",
+            "session": "S10",
+            "text": "Good to talk to you again. What's up? Anything new since last time?",
+            "audio": "audio/spatial/turn-09.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.641,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D15:13",
+            "session": "S15",
+            "text": "Wow! Did you see that band?",
+            "audio": "audio/spatial/turn-10.wav",
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.581,
+            "margin": 0.036,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D15:14",
+            "session": "S15",
+            "text": "Yeah, that pic was from a show I went to. It was so much fun and reminded me of how music brings us together.",
+            "audio": "audio/spatial/turn-11.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.859,
+            "margin": null,
+            "stateAction": "Center updated"
+          }
+        ],
+        "metrics": {
+          "structure": "93.54% B³ F1",
+          "access": "115 wrong auth.",
+          "qa": "70.24% gated QA"
+        },
+        "query": {
+          "text": "What is my identity?",
+          "audio": null,
+          "assigned": true,
+          "entity": "E3",
+          "similarity": 0.593,
+          "margin": 0.181,
+          "evidence": "spk_3 wants to live authentically.",
+          "answer": "spk_3 is exploring their identity through art and wants to live authentically.",
+          "judge": 1
+        }
+      },
+      "gated": {
+        "id": "gated",
+        "label": "Gated Update",
+        "entities": [
+          {
+            "id": "spk_1",
+            "label": "E1"
+          },
+          {
+            "id": "spk_2",
+            "label": "E2"
+          },
+          {
+            "id": "spk_3",
+            "label": "E3"
+          },
+          {
+            "id": "spk_4",
+            "label": "E4"
+          }
+        ],
+        "entityCount": 4,
+        "turns": [
+          {
+            "id": "D2:6",
+            "session": "S2",
+            "text": "That's great. Taking time for yourself is so important. You're doing an awesome job looking after yourself and your family!",
+            "audio": "audio/spatial/turn-01.wav",
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.876,
+            "margin": 0.322,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D2:7",
+            "session": "S2",
+            "text": "It's still a work in progress, but I'm doing my best. My kids are so excited about summer break!",
+            "audio": "audio/spatial/turn-02.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.88,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D2:8",
+            "session": "S2",
+            "text": "Researching adoption agencies — it's been a dream to have a family and give a loving home to kids who need it.",
+            "audio": "audio/spatial/turn-03.wav",
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.872,
+            "margin": 0.334,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:10",
+            "session": "S3",
+            "text": "Your courage is inspiring. I want to be courageous for my family — they motivate me and give me love.",
+            "audio": "audio/spatial/turn-04.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.856,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:11",
+            "session": "S3",
+            "text": "My friends, family and mentors are my rocks — they motivate me and give me the strength to push on.",
+            "audio": "audio/spatial/turn-05.wav",
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.875,
+            "margin": 0.306,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:22",
+            "session": "S3",
+            "text": "I cherish time with family. It's when I really feel alive and happy.",
+            "audio": "audio/spatial/turn-06.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.869,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:23",
+            "session": "S3",
+            "text": "Hanging with loved ones is amazing and brings so much happiness. Those moments really make me thankful.",
+            "audio": "audio/spatial/turn-07.wav",
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.861,
+            "margin": 0.341,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D10:1",
+            "session": "S10",
+            "text": "Just wanted to say hi!",
+            "audio": "audio/spatial/turn-08.wav",
+            "entity": "E4",
+            "action": "link",
+            "similarity": 0.803,
+            "margin": 0.177,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D10:2",
+            "session": "S10",
+            "text": "Good to talk to you again. What's up? Anything new since last time?",
+            "audio": "audio/spatial/turn-09.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.64,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D15:13",
+            "session": "S15",
+            "text": "Wow! Did you see that band?",
+            "audio": "audio/spatial/turn-10.wav",
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.58,
+            "margin": 0.035,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D15:14",
+            "session": "S15",
+            "text": "Yeah, that pic was from a show I went to. It was so much fun and reminded me of how music brings us together.",
+            "audio": "audio/spatial/turn-11.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.859,
+            "margin": null,
+            "stateAction": "Center updated"
+          }
+        ],
+        "metrics": {
+          "structure": "92.73% B³ F1",
+          "access": "0 wrong auth.",
+          "qa": "71.77% gated QA"
+        },
+        "query": {
+          "text": "What is my identity?",
+          "audio": null,
+          "assigned": true,
+          "entity": "E3",
+          "similarity": 0.593,
+          "margin": 0.18,
+          "evidence": "spk_3 wants to live authentically.",
+          "answer": "spk_3 is exploring their identity through art and wants to live authentically.",
+          "judge": 1
+        }
+      },
+      "knn": {
+        "id": "knn",
+        "label": "All-exemplar KNN",
+        "entities": [
+          {
+            "id": "spk_1",
+            "label": "E1"
+          },
+          {
+            "id": "spk_2",
+            "label": "E2"
+          },
+          {
+            "id": "spk_3",
+            "label": "E3"
+          },
+          {
+            "id": "spk_4",
+            "label": "E4"
+          }
+        ],
+        "entityCount": 4,
+        "turns": [
+          {
+            "id": "D2:6",
+            "session": "S2",
+            "text": "That's great. Taking time for yourself is so important. You're doing an awesome job looking after yourself and your family!",
+            "audio": "audio/spatial/turn-01.wav",
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.797,
+            "margin": 0.244,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D2:7",
+            "session": "S2",
+            "text": "It's still a work in progress, but I'm doing my best. My kids are so excited about summer break!",
+            "audio": "audio/spatial/turn-02.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.819,
+            "margin": null,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D2:8",
+            "session": "S2",
+            "text": "Researching adoption agencies — it's been a dream to have a family and give a loving home to kids who need it.",
+            "audio": "audio/spatial/turn-03.wav",
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.795,
+            "margin": 0.256,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D3:10",
+            "session": "S3",
+            "text": "Your courage is inspiring. I want to be courageous for my family — they motivate me and give me love.",
+            "audio": "audio/spatial/turn-04.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.845,
+            "margin": null,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D3:11",
+            "session": "S3",
+            "text": "My friends, family and mentors are my rocks — they motivate me and give me the strength to push on.",
+            "audio": "audio/spatial/turn-05.wav",
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.854,
+            "margin": 0.285,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D3:22",
+            "session": "S3",
+            "text": "I cherish time with family. It's when I really feel alive and happy.",
+            "audio": "audio/spatial/turn-06.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.819,
+            "margin": null,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D3:23",
+            "session": "S3",
+            "text": "Hanging with loved ones is amazing and brings so much happiness. Those moments really make me thankful.",
+            "audio": "audio/spatial/turn-07.wav",
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.849,
+            "margin": 0.329,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D10:1",
+            "session": "S10",
+            "text": "Just wanted to say hi!",
+            "audio": "audio/spatial/turn-08.wav",
+            "entity": "E4",
+            "action": "link",
+            "similarity": 0.76,
+            "margin": 0.152,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D10:2",
+            "session": "S10",
+            "text": "Good to talk to you again. What's up? Anything new since last time?",
+            "audio": "audio/spatial/turn-09.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.797,
+            "margin": null,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D15:13",
+            "session": "S15",
+            "text": "Wow! Did you see that band?",
+            "audio": "audio/spatial/turn-10.wav",
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.613,
+            "margin": null,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D15:14",
+            "session": "S15",
+            "text": "Yeah, that pic was from a show I went to. It was so much fun and reminded me of how music brings us together.",
+            "audio": "audio/spatial/turn-11.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.836,
+            "margin": null,
+            "stateAction": "Exemplar appended"
+          }
+        ],
+        "metrics": {
+          "structure": "96.62% B³ F1",
+          "access": "116 wrong auth.",
+          "qa": "72.40% gated QA"
+        },
+        "query": {
+          "text": "What is my identity?",
+          "audio": null,
+          "assigned": true,
+          "entity": "E3",
+          "similarity": 0.613,
+          "margin": 0.19,
+          "evidence": "spk_3 wants to live authentically.",
+          "answer": "Transgender woman",
+          "judge": 1
+        }
+      },
+      "parakeet-fixed": {
+        "id": "parakeet-fixed",
+        "label": "Parakeet + Fixed",
+        "entities": [
+          {
+            "id": "spk_1",
+            "label": "E1"
+          },
+          {
+            "id": "spk_2",
+            "label": "E2"
+          },
+          {
+            "id": "spk_3",
+            "label": "E3"
+          }
+        ],
+        "entityCount": 3,
+        "turns": [
+          {
+            "id": "D2:6",
+            "session": "S2",
+            "text": "That's great. Taking time for yourself is so important. You're doing an awesome job looking after yourself and your family!",
+            "audio": "audio/spatial/turn-01.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.886,
+            "margin": 0.676,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D2:7",
+            "session": "S2",
+            "text": "It's still a work in progress, but I'm doing my best. My kids are so excited about summer break!",
+            "audio": "audio/spatial/turn-02.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.909,
+            "margin": 0.603,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D2:8",
+            "session": "S2",
+            "text": "Researching adoption agencies — it's been a dream to have a family and give a loving home to kids who need it.",
+            "audio": "audio/spatial/turn-03.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.886,
+            "margin": 0.676,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D3:10",
+            "session": "S3",
+            "text": "Your courage is inspiring. I want to be courageous for my family — they motivate me and give me love.",
+            "audio": "audio/spatial/turn-04.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.903,
+            "margin": 0.592,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D3:11",
+            "session": "S3",
+            "text": "My friends, family and mentors are my rocks — they motivate me and give me the strength to push on.",
+            "audio": "audio/spatial/turn-05.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.881,
+            "margin": 0.541,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D3:22",
+            "session": "S3",
+            "text": "I cherish time with family. It's when I really feel alive and happy.",
+            "audio": "audio/spatial/turn-06.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.903,
+            "margin": 0.592,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D3:23",
+            "session": "S3",
+            "text": "Hanging with loved ones is amazing and brings so much happiness. Those moments really make me thankful.",
+            "audio": "audio/spatial/turn-07.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.881,
+            "margin": 0.541,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D10:1",
+            "session": "S10",
+            "text": "Just wanted to say hi!",
+            "audio": "audio/spatial/turn-08.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.598,
+            "margin": 0.363,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D10:2",
+            "session": "S10",
+            "text": "Good to talk to you again. What's up? Anything new since last time?",
+            "audio": "audio/spatial/turn-09.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.598,
+            "margin": 0.363,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D15:13",
+            "session": "S15",
+            "text": "Wow! Did you see that band?",
+            "audio": "audio/spatial/turn-10.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.886,
+            "margin": 0.477,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D15:14",
+            "session": "S15",
+            "text": "Yeah, that pic was from a show I went to. It was so much fun and reminded me of how music brings us together.",
+            "audio": "audio/spatial/turn-11.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.886,
+            "margin": 0.477,
+            "stateAction": "Center fixed"
+          }
+        ],
+        "metrics": {
+          "structure": "81.05% B³ F1",
+          "access": "318 wrong auth.",
+          "qa": "63.36% gated QA"
+        },
+        "query": {
+          "text": "What is my identity?",
+          "audio": null,
+          "assigned": true,
+          "entity": "E1",
+          "similarity": 0.521,
+          "margin": 0.215,
+          "evidence": "spk_1's painting titled 'Embracing Identity' is about finding comfort and love in being oneself.",
+          "answer": "Transgender woman",
+          "judge": 1
+        }
+      },
+      "parakeet-update": {
+        "id": "parakeet-update",
+        "label": "Parakeet + Update",
+        "entities": [
+          {
+            "id": "spk_1",
+            "label": "E1"
+          },
+          {
+            "id": "spk_2",
+            "label": "E2"
+          }
+        ],
+        "entityCount": 2,
+        "turns": [
+          {
+            "id": "D2:6",
+            "session": "S2",
+            "text": "That's great. Taking time for yourself is so important. You're doing an awesome job looking after yourself and your family!",
+            "audio": "audio/spatial/turn-01.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.886,
+            "margin": 0.676,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D2:7",
+            "session": "S2",
+            "text": "It's still a work in progress, but I'm doing my best. My kids are so excited about summer break!",
+            "audio": "audio/spatial/turn-02.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.909,
+            "margin": 0.603,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D2:8",
+            "session": "S2",
+            "text": "Researching adoption agencies — it's been a dream to have a family and give a loving home to kids who need it.",
+            "audio": "audio/spatial/turn-03.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.886,
+            "margin": 0.676,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:10",
+            "session": "S3",
+            "text": "Your courage is inspiring. I want to be courageous for my family — they motivate me and give me love.",
+            "audio": "audio/spatial/turn-04.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.942,
+            "margin": 0.688,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:11",
+            "session": "S3",
+            "text": "My friends, family and mentors are my rocks — they motivate me and give me the strength to push on.",
+            "audio": "audio/spatial/turn-05.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.901,
+            "margin": 0.561,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:22",
+            "session": "S3",
+            "text": "I cherish time with family. It's when I really feel alive and happy.",
+            "audio": "audio/spatial/turn-06.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.942,
+            "margin": 0.688,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:23",
+            "session": "S3",
+            "text": "Hanging with loved ones is amazing and brings so much happiness. Those moments really make me thankful.",
+            "audio": "audio/spatial/turn-07.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.901,
+            "margin": 0.561,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D10:1",
+            "session": "S10",
+            "text": "Just wanted to say hi!",
+            "audio": "audio/spatial/turn-08.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.722,
+            "margin": 0.413,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D10:2",
+            "session": "S10",
+            "text": "Good to talk to you again. What's up? Anything new since last time?",
+            "audio": "audio/spatial/turn-09.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.722,
+            "margin": 0.413,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D15:13",
+            "session": "S15",
+            "text": "Wow! Did you see that band?",
+            "audio": "audio/spatial/turn-10.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.956,
+            "margin": 0.572,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D15:14",
+            "session": "S15",
+            "text": "Yeah, that pic was from a show I went to. It was so much fun and reminded me of how music brings us together.",
+            "audio": "audio/spatial/turn-11.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.956,
+            "margin": 0.572,
+            "stateAction": "Center updated"
+          }
+        ],
+        "metrics": {
+          "structure": "81.23% B³ F1",
+          "access": "320 wrong auth.",
+          "qa": "67.76% gated QA"
+        },
+        "query": {
+          "text": "What is my identity?",
+          "audio": null,
+          "assigned": true,
+          "entity": "E1",
+          "similarity": 0.594,
+          "margin": 0.302,
+          "evidence": "spk_1's painting titled 'Embracing Identity' is about finding comfort and love in being oneself.",
+          "answer": "Trans woman",
+          "judge": 1
+        }
+      },
+      "parakeet-gated": {
+        "id": "parakeet-gated",
+        "label": "Parakeet + Gated Update",
+        "entities": [
+          {
+            "id": "spk_1",
+            "label": "E1"
+          },
+          {
+            "id": "spk_2",
+            "label": "E2"
+          }
+        ],
+        "entityCount": 2,
+        "turns": [
+          {
+            "id": "D2:6",
+            "session": "S2",
+            "text": "That's great. Taking time for yourself is so important. You're doing an awesome job looking after yourself and your family!",
+            "audio": "audio/spatial/turn-01.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.886,
+            "margin": 0.676,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D2:7",
+            "session": "S2",
+            "text": "It's still a work in progress, but I'm doing my best. My kids are so excited about summer break!",
+            "audio": "audio/spatial/turn-02.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.909,
+            "margin": 0.603,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D2:8",
+            "session": "S2",
+            "text": "Researching adoption agencies — it's been a dream to have a family and give a loving home to kids who need it.",
+            "audio": "audio/spatial/turn-03.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.886,
+            "margin": 0.676,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:10",
+            "session": "S3",
+            "text": "Your courage is inspiring. I want to be courageous for my family — they motivate me and give me love.",
+            "audio": "audio/spatial/turn-04.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.942,
+            "margin": 0.688,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:11",
+            "session": "S3",
+            "text": "My friends, family and mentors are my rocks — they motivate me and give me the strength to push on.",
+            "audio": "audio/spatial/turn-05.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.901,
+            "margin": 0.561,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:22",
+            "session": "S3",
+            "text": "I cherish time with family. It's when I really feel alive and happy.",
+            "audio": "audio/spatial/turn-06.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.942,
+            "margin": 0.688,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D3:23",
+            "session": "S3",
+            "text": "Hanging with loved ones is amazing and brings so much happiness. Those moments really make me thankful.",
+            "audio": "audio/spatial/turn-07.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.901,
+            "margin": 0.561,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D10:1",
+            "session": "S10",
+            "text": "Just wanted to say hi!",
+            "audio": "audio/spatial/turn-08.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.722,
+            "margin": 0.413,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D10:2",
+            "session": "S10",
+            "text": "Good to talk to you again. What's up? Anything new since last time?",
+            "audio": "audio/spatial/turn-09.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.722,
+            "margin": 0.413,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D15:13",
+            "session": "S15",
+            "text": "Wow! Did you see that band?",
+            "audio": "audio/spatial/turn-10.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.956,
+            "margin": 0.57,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D15:14",
+            "session": "S15",
+            "text": "Yeah, that pic was from a show I went to. It was so much fun and reminded me of how music brings us together.",
+            "audio": "audio/spatial/turn-11.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.956,
+            "margin": 0.57,
+            "stateAction": "Center updated"
+          }
+        ],
+        "metrics": {
+          "structure": "81.20% B³ F1",
+          "access": "320 wrong auth.",
+          "qa": "67.20% gated QA"
+        },
+        "query": {
+          "text": "What is my identity?",
+          "audio": null,
+          "assigned": true,
+          "entity": "E1",
+          "similarity": 0.595,
+          "margin": 0.303,
+          "evidence": "spk_1's painting titled 'Embracing Identity' is about finding comfort and love in being oneself.",
+          "answer": "Trans woman",
+          "judge": 1
+        }
+      },
+      "parakeet-knn": {
+        "id": "parakeet-knn",
+        "label": "Parakeet + KNN",
+        "entities": [
+          {
+            "id": "spk_1",
+            "label": "E1"
+          },
+          {
+            "id": "spk_2",
+            "label": "E2"
+          }
+        ],
+        "entityCount": 2,
+        "turns": [
+          {
+            "id": "D2:6",
+            "session": "S2",
+            "text": "That's great. Taking time for yourself is so important. You're doing an awesome job looking after yourself and your family!",
+            "audio": "audio/spatial/turn-01.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.886,
+            "margin": 0.676,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D2:7",
+            "session": "S2",
+            "text": "It's still a work in progress, but I'm doing my best. My kids are so excited about summer break!",
+            "audio": "audio/spatial/turn-02.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.909,
+            "margin": 0.603,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D2:8",
+            "session": "S2",
+            "text": "Researching adoption agencies — it's been a dream to have a family and give a loving home to kids who need it.",
+            "audio": "audio/spatial/turn-03.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.886,
+            "margin": 0.676,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D3:10",
+            "session": "S3",
+            "text": "Your courage is inspiring. I want to be courageous for my family — they motivate me and give me love.",
+            "audio": "audio/spatial/turn-04.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.92,
+            "margin": 0.673,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D3:11",
+            "session": "S3",
+            "text": "My friends, family and mentors are my rocks — they motivate me and give me the strength to push on.",
+            "audio": "audio/spatial/turn-05.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.876,
+            "margin": 0.543,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D3:22",
+            "session": "S3",
+            "text": "I cherish time with family. It's when I really feel alive and happy.",
+            "audio": "audio/spatial/turn-06.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.92,
+            "margin": 0.673,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D3:23",
+            "session": "S3",
+            "text": "Hanging with loved ones is amazing and brings so much happiness. Those moments really make me thankful.",
+            "audio": "audio/spatial/turn-07.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.876,
+            "margin": 0.543,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D10:1",
+            "session": "S10",
+            "text": "Just wanted to say hi!",
+            "audio": "audio/spatial/turn-08.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.709,
+            "margin": 0.379,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D10:2",
+            "session": "S10",
+            "text": "Good to talk to you again. What's up? Anything new since last time?",
+            "audio": "audio/spatial/turn-09.wav",
+            "entity": "E1",
+            "action": "link",
+            "similarity": 0.709,
+            "margin": 0.379,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D15:13",
+            "session": "S15",
+            "text": "Wow! Did you see that band?",
+            "audio": "audio/spatial/turn-10.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.941,
+            "margin": 0.533,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D15:14",
+            "session": "S15",
+            "text": "Yeah, that pic was from a show I went to. It was so much fun and reminded me of how music brings us together.",
+            "audio": "audio/spatial/turn-11.wav",
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.941,
+            "margin": 0.533,
+            "stateAction": "Exemplar appended"
+          }
+        ],
+        "metrics": {
+          "structure": "81.04% B³ F1",
+          "access": "321 wrong auth.",
+          "qa": "67.57% gated QA"
+        },
+        "query": {
+          "text": "What is my identity?",
+          "audio": null,
+          "assigned": true,
+          "entity": "E1",
+          "similarity": 0.611,
+          "margin": 0.291,
+          "evidence": "spk_1's painting titled 'Embracing Identity' is about finding comfort and love in being oneself.",
+          "answer": "Trans woman",
+          "judge": 1
+        }
+      }
+    }
+  },
+  "four": {
+    "kicker": "Condition C",
+    "title": "Four-speaker fact-confusion stress trace",
+    "protocol": "Two parallel two-speaker stories contain matched statements whose key fact differs: video games in the original stream and board games in the injected stream.",
+    "queryNote": "The selected query targets the original stream. No audio is embedded for this text-only conflict trace.",
+    "selection": "A fixed original/injected excerpt whose video-games versus board-games replacements are explicitly marked in the benchmark construction.",
+    "source": "Eight interleaved history turns and one first-person query from the four-speaker fact-confusion benchmark.",
+    "evidenceScope": "Each policy panel shows its actual precomputed routing, retrieval, answer, and judge result; policy-local entity IDs are remapped only for display.",
+    "policyTraces": {
+      "fixed": {
+        "id": "fixed",
+        "label": "Fixed",
+        "entities": [
+          {
+            "id": "spk_1",
+            "label": "E1"
+          },
+          {
+            "id": "spk_2",
+            "label": "E2"
+          },
+          {
+            "id": "spk_3",
+            "label": "E3"
+          },
+          {
+            "id": "spk_4",
+            "label": "E4"
+          },
+          {
+            "id": "spk_5",
+            "label": "E5"
+          },
+          {
+            "id": "spk_6",
+            "label": "E6"
+          },
+          {
+            "id": "spk_7",
+            "label": "E7"
+          },
+          {
+            "id": "spk_8",
+            "label": "E8"
+          },
+          {
+            "id": "spk_9",
+            "label": "E9"
+          },
+          {
+            "id": "spk_10",
+            "label": "E10"
+          },
+          {
+            "id": "spk_11",
+            "label": "E11"
+          },
+          {
+            "id": "spk_12",
+            "label": "E12"
+          },
+          {
+            "id": "spk_13",
+            "label": "E13"
+          },
+          {
+            "id": "spk_14",
+            "label": "E14"
+          },
+          {
+            "id": "spk_15",
+            "label": "E15"
+          },
+          {
+            "id": "spk_16",
+            "label": "E16"
+          },
+          {
+            "id": "spk_17",
+            "label": "E17"
+          },
+          {
+            "id": "spk_18",
+            "label": "E18"
+          },
+          {
+            "id": "spk_19",
+            "label": "E19"
+          },
+          {
+            "id": "spk_20",
+            "label": "E20"
+          },
+          {
+            "id": "spk_21",
+            "label": "E21"
+          }
+        ],
+        "entityCount": 21,
+        "turns": [
+          {
+            "id": "D2:22",
+            "session": "S3",
+            "stream": "Injected",
+            "text": " I was playing board games and my pet just slinked out of her cage and coiled up next to me - it was too funny! My second snake Seraphim did it. Look at her sly eyes!",
+            "audio": null,
+            "entity": "E5",
+            "action": "link",
+            "similarity": 0.86,
+            "margin": 0.302,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D2:22",
+            "session": "S4",
+            "stream": "Original",
+            "text": " I was playing video games and my pet just slinked out of her cage and coiled up next to me - it was too funny! My second snake Seraphim did it. Look at her sly eyes!",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.873,
+            "margin": 0.371,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D7:1",
+            "session": "S13",
+            "stream": "Original",
+            "text": "Hi Deborah, it's been a while! Since we last talked, so much has happened. Balancing engineering school with my partner's video games is quite a feat. But I'm also setting aside time for myself, doing yoga and meditation. It helps give me calm amidst the craziness.",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.899,
+            "margin": null,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D7:1",
+            "session": "S14",
+            "stream": "Injected",
+            "text": "Hi Deborah, it's been a while! Since we last talked, so much has happened. Balancing engineering school with my partner's board games is quite a feat. But I'm also setting aside time for myself, doing yoga and meditation. It helps give me calm amidst the craziness.",
+            "audio": null,
+            "entity": "E5",
+            "action": "link",
+            "similarity": 0.876,
+            "margin": 0.335,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D12:6",
+            "session": "S23",
+            "stream": "Injected",
+            "text": "Even though my snakes can't chat or understand what I'm going through, our time together is valuable and teaches me to take time and be in tune with myself. Similarly, playing board games with my partner after a long day is a great way for me to relax.",
+            "audio": null,
+            "entity": "E5",
+            "action": "link",
+            "similarity": 0.788,
+            "margin": 0.176,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D12:6",
+            "session": "S24",
+            "stream": "Original",
+            "text": "Even though my snakes can't chat or understand what I'm going through, our time together is valuable and teaches me to take time and be in tune with myself. Similarly, playing video games with my partner after a long day is a great way for me to relax.",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.871,
+            "margin": null,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D16:4",
+            "session": "S31",
+            "stream": "Injected",
+            "text": "Your support means a lot. Susie really helps when times get tough. Pets have been great company. board games have also been a nice distraction.",
+            "audio": null,
+            "entity": "E5",
+            "action": "link",
+            "similarity": 0.8,
+            "margin": 0.24,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D16:4",
+            "session": "S32",
+            "stream": "Original",
+            "text": "Your support means a lot. Susie really helps when times get tough. Pets have been great company. Video games have also been a nice distraction.",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.844,
+            "margin": null,
+            "stateAction": "Center fixed"
+          }
+        ],
+        "metrics": {
+          "structure": "21 local entities",
+          "access": "Targeted query trace",
+          "qa": "Judge: incorrect"
+        },
+        "query": {
+          "text": "What activities have been helping me stay distracted during tough times?",
+          "audio": null,
+          "assigned": true,
+          "entity": "E2",
+          "similarity": 0.824,
+          "margin": 0.315,
+          "evidence": "spk_2 values tips for staying relaxed while studying.",
+          "answer": "Yoga, meditation, music",
+          "judge": 0
+        }
+      },
+      "update": {
+        "id": "update",
+        "label": "Update",
+        "entities": [
+          {
+            "id": "spk_1",
+            "label": "E1"
+          },
+          {
+            "id": "spk_2",
+            "label": "E2"
+          },
+          {
+            "id": "spk_3",
+            "label": "E3"
+          },
+          {
+            "id": "spk_4",
+            "label": "E4"
+          },
+          {
+            "id": "spk_5",
+            "label": "E5"
+          },
+          {
+            "id": "spk_6",
+            "label": "E6"
+          },
+          {
+            "id": "spk_7",
+            "label": "E7"
+          }
+        ],
+        "entityCount": 7,
+        "turns": [
+          {
+            "id": "D2:22",
+            "session": "S3",
+            "stream": "Injected",
+            "text": " I was playing board games and my pet just slinked out of her cage and coiled up next to me - it was too funny! My second snake Seraphim did it. Look at her sly eyes!",
+            "audio": null,
+            "entity": "E4",
+            "action": "link",
+            "similarity": 0.903,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D2:22",
+            "session": "S4",
+            "stream": "Original",
+            "text": " I was playing video games and my pet just slinked out of her cage and coiled up next to me - it was too funny! My second snake Seraphim did it. Look at her sly eyes!",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.912,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D7:1",
+            "session": "S13",
+            "stream": "Original",
+            "text": "Hi Deborah, it's been a while! Since we last talked, so much has happened. Balancing engineering school with my partner's video games is quite a feat. But I'm also setting aside time for myself, doing yoga and meditation. It helps give me calm amidst the craziness.",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.928,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D7:1",
+            "session": "S14",
+            "stream": "Injected",
+            "text": "Hi Deborah, it's been a while! Since we last talked, so much has happened. Balancing engineering school with my partner's board games is quite a feat. But I'm also setting aside time for myself, doing yoga and meditation. It helps give me calm amidst the craziness.",
+            "audio": null,
+            "entity": "E4",
+            "action": "link",
+            "similarity": 0.917,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D12:6",
+            "session": "S23",
+            "stream": "Injected",
+            "text": "Even though my snakes can't chat or understand what I'm going through, our time together is valuable and teaches me to take time and be in tune with myself. Similarly, playing board games with my partner after a long day is a great way for me to relax.",
+            "audio": null,
+            "entity": "E4",
+            "action": "link",
+            "similarity": 0.864,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D12:6",
+            "session": "S24",
+            "stream": "Original",
+            "text": "Even though my snakes can't chat or understand what I'm going through, our time together is valuable and teaches me to take time and be in tune with myself. Similarly, playing video games with my partner after a long day is a great way for me to relax.",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.924,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D16:4",
+            "session": "S31",
+            "stream": "Injected",
+            "text": "Your support means a lot. Susie really helps when times get tough. Pets have been great company. board games have also been a nice distraction.",
+            "audio": null,
+            "entity": "E4",
+            "action": "link",
+            "similarity": 0.91,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D16:4",
+            "session": "S32",
+            "stream": "Original",
+            "text": "Your support means a lot. Susie really helps when times get tough. Pets have been great company. Video games have also been a nice distraction.",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.905,
+            "margin": null,
+            "stateAction": "Center updated"
+          }
+        ],
+        "metrics": {
+          "structure": "7 local entities",
+          "access": "Targeted query trace",
+          "qa": "Judge: incorrect"
+        },
+        "query": {
+          "text": "What activities have been helping me stay distracted during tough times?",
+          "audio": null,
+          "assigned": true,
+          "entity": "E2",
+          "similarity": 0.899,
+          "margin": 0.538,
+          "evidence": "spk_2 values tips for staying relaxed while studying.",
+          "answer": "Video games and yoga.",
+          "judge": 0
+        }
+      },
+      "gated": {
+        "id": "gated",
+        "label": "Gated Update",
+        "entities": [
+          {
+            "id": "spk_1",
+            "label": "E1"
+          },
+          {
+            "id": "spk_2",
+            "label": "E2"
+          },
+          {
+            "id": "spk_3",
+            "label": "E3"
+          },
+          {
+            "id": "spk_4",
+            "label": "E4"
+          },
+          {
+            "id": "spk_5",
+            "label": "E5"
+          },
+          {
+            "id": "spk_6",
+            "label": "E6"
+          },
+          {
+            "id": "spk_7",
+            "label": "E7"
+          }
+        ],
+        "entityCount": 7,
+        "turns": [
+          {
+            "id": "D2:22",
+            "session": "S3",
+            "stream": "Injected",
+            "text": " I was playing board games and my pet just slinked out of her cage and coiled up next to me - it was too funny! My second snake Seraphim did it. Look at her sly eyes!",
+            "audio": null,
+            "entity": "E4",
+            "action": "link",
+            "similarity": 0.903,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D2:22",
+            "session": "S4",
+            "stream": "Original",
+            "text": " I was playing video games and my pet just slinked out of her cage and coiled up next to me - it was too funny! My second snake Seraphim did it. Look at her sly eyes!",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.915,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D7:1",
+            "session": "S13",
+            "stream": "Original",
+            "text": "Hi Deborah, it's been a while! Since we last talked, so much has happened. Balancing engineering school with my partner's video games is quite a feat. But I'm also setting aside time for myself, doing yoga and meditation. It helps give me calm amidst the craziness.",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.929,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D7:1",
+            "session": "S14",
+            "stream": "Injected",
+            "text": "Hi Deborah, it's been a while! Since we last talked, so much has happened. Balancing engineering school with my partner's board games is quite a feat. But I'm also setting aside time for myself, doing yoga and meditation. It helps give me calm amidst the craziness.",
+            "audio": null,
+            "entity": "E4",
+            "action": "link",
+            "similarity": 0.918,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D12:6",
+            "session": "S23",
+            "stream": "Injected",
+            "text": "Even though my snakes can't chat or understand what I'm going through, our time together is valuable and teaches me to take time and be in tune with myself. Similarly, playing board games with my partner after a long day is a great way for me to relax.",
+            "audio": null,
+            "entity": "E4",
+            "action": "link",
+            "similarity": 0.863,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D12:6",
+            "session": "S24",
+            "stream": "Original",
+            "text": "Even though my snakes can't chat or understand what I'm going through, our time together is valuable and teaches me to take time and be in tune with myself. Similarly, playing video games with my partner after a long day is a great way for me to relax.",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.925,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D16:4",
+            "session": "S31",
+            "stream": "Injected",
+            "text": "Your support means a lot. Susie really helps when times get tough. Pets have been great company. board games have also been a nice distraction.",
+            "audio": null,
+            "entity": "E4",
+            "action": "link",
+            "similarity": 0.909,
+            "margin": null,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D16:4",
+            "session": "S32",
+            "stream": "Original",
+            "text": "Your support means a lot. Susie really helps when times get tough. Pets have been great company. Video games have also been a nice distraction.",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.906,
+            "margin": null,
+            "stateAction": "Center updated"
+          }
+        ],
+        "metrics": {
+          "structure": "7 local entities",
+          "access": "Targeted query trace",
+          "qa": "Judge: incorrect"
+        },
+        "query": {
+          "text": "What activities have been helping me stay distracted during tough times?",
+          "audio": null,
+          "assigned": true,
+          "entity": "E2",
+          "similarity": 0.899,
+          "margin": 0.539,
+          "evidence": "spk_2 values tips for staying relaxed while studying.",
+          "answer": "Video games and yoga.",
+          "judge": 0
+        }
+      },
+      "knn": {
+        "id": "knn",
+        "label": "All-exemplar KNN",
+        "entities": [
+          {
+            "id": "spk_1",
+            "label": "E1"
+          },
+          {
+            "id": "spk_2",
+            "label": "E2"
+          },
+          {
+            "id": "spk_3",
+            "label": "E3"
+          },
+          {
+            "id": "spk_4",
+            "label": "E4"
+          },
+          {
+            "id": "spk_5",
+            "label": "E5"
+          },
+          {
+            "id": "spk_6",
+            "label": "E6"
+          },
+          {
+            "id": "spk_7",
+            "label": "E7"
+          },
+          {
+            "id": "spk_8",
+            "label": "E8"
+          }
+        ],
+        "entityCount": 8,
+        "turns": [
+          {
+            "id": "D2:22",
+            "session": "S3",
+            "stream": "Injected",
+            "text": " I was playing board games and my pet just slinked out of her cage and coiled up next to me - it was too funny! My second snake Seraphim did it. Look at her sly eyes!",
+            "audio": null,
+            "entity": "E5",
+            "action": "link",
+            "similarity": 0.85,
+            "margin": null,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D2:22",
+            "session": "S4",
+            "stream": "Original",
+            "text": " I was playing video games and my pet just slinked out of her cage and coiled up next to me - it was too funny! My second snake Seraphim did it. Look at her sly eyes!",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.859,
+            "margin": 0.357,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D7:1",
+            "session": "S13",
+            "stream": "Original",
+            "text": "Hi Deborah, it's been a while! Since we last talked, so much has happened. Balancing engineering school with my partner's video games is quite a feat. But I'm also setting aside time for myself, doing yoga and meditation. It helps give me calm amidst the craziness.",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.896,
+            "margin": null,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D7:1",
+            "session": "S14",
+            "stream": "Injected",
+            "text": "Hi Deborah, it's been a while! Since we last talked, so much has happened. Balancing engineering school with my partner's board games is quite a feat. But I'm also setting aside time for myself, doing yoga and meditation. It helps give me calm amidst the craziness.",
+            "audio": null,
+            "entity": "E5",
+            "action": "link",
+            "similarity": 0.884,
+            "margin": null,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D12:6",
+            "session": "S23",
+            "stream": "Injected",
+            "text": "Even though my snakes can't chat or understand what I'm going through, our time together is valuable and teaches me to take time and be in tune with myself. Similarly, playing board games with my partner after a long day is a great way for me to relax.",
+            "audio": null,
+            "entity": "E5",
+            "action": "link",
+            "similarity": 0.86,
+            "margin": null,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D12:6",
+            "session": "S24",
+            "stream": "Original",
+            "text": "Even though my snakes can't chat or understand what I'm going through, our time together is valuable and teaches me to take time and be in tune with myself. Similarly, playing video games with my partner after a long day is a great way for me to relax.",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.888,
+            "margin": null,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D16:4",
+            "session": "S31",
+            "stream": "Injected",
+            "text": "Your support means a lot. Susie really helps when times get tough. Pets have been great company. board games have also been a nice distraction.",
+            "audio": null,
+            "entity": "E5",
+            "action": "link",
+            "similarity": 0.876,
+            "margin": null,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D16:4",
+            "session": "S32",
+            "stream": "Original",
+            "text": "Your support means a lot. Susie really helps when times get tough. Pets have been great company. Video games have also been a nice distraction.",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.892,
+            "margin": null,
+            "stateAction": "Exemplar appended"
+          }
+        ],
+        "metrics": {
+          "structure": "8 local entities",
+          "access": "Targeted query trace",
+          "qa": "Judge: correct"
+        },
+        "query": {
+          "text": "What activities have been helping me stay distracted during tough times?",
+          "audio": null,
+          "assigned": true,
+          "entity": "E2",
+          "similarity": 0.871,
+          "margin": 0.362,
+          "evidence": "spk_2 values tips for staying relaxed while studying.",
+          "answer": "Playing video games",
+          "judge": 1
+        }
+      },
+      "parakeet-fixed": {
+        "id": "parakeet-fixed",
+        "label": "Parakeet + Fixed",
+        "entities": [
+          {
+            "id": "spk_1",
+            "label": "E1"
+          },
+          {
+            "id": "spk_2",
+            "label": "E2"
+          },
+          {
+            "id": "spk_3",
+            "label": "E3"
+          }
+        ],
+        "entityCount": 3,
+        "turns": [
+          {
+            "id": "D2:22",
+            "session": "S3",
+            "stream": "Injected",
+            "text": " I was playing board games and my pet just slinked out of her cage and coiled up next to me - it was too funny! My second snake Seraphim did it. Look at her sly eyes!",
+            "audio": null,
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.956,
+            "margin": 0.524,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D2:22",
+            "session": "S4",
+            "stream": "Original",
+            "text": " I was playing video games and my pet just slinked out of her cage and coiled up next to me - it was too funny! My second snake Seraphim did it. Look at her sly eyes!",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.906,
+            "margin": 0.04,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D7:1",
+            "session": "S13",
+            "stream": "Original",
+            "text": "Hi Deborah, it's been a while! Since we last talked, so much has happened. Balancing engineering school with my partner's video games is quite a feat. But I'm also setting aside time for myself, doing yoga and meditation. It helps give me calm amidst the craziness.",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.939,
+            "margin": 0.153,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D7:1",
+            "session": "S14",
+            "stream": "Injected",
+            "text": "Hi Deborah, it's been a while! Since we last talked, so much has happened. Balancing engineering school with my partner's board games is quite a feat. But I'm also setting aside time for myself, doing yoga and meditation. It helps give me calm amidst the craziness.",
+            "audio": null,
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.86,
+            "margin": 0.466,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D12:6",
+            "session": "S23",
+            "stream": "Injected",
+            "text": "Even though my snakes can't chat or understand what I'm going through, our time together is valuable and teaches me to take time and be in tune with myself. Similarly, playing board games with my partner after a long day is a great way for me to relax.",
+            "audio": null,
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.946,
+            "margin": 0.528,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D12:6",
+            "session": "S24",
+            "stream": "Original",
+            "text": "Even though my snakes can't chat or understand what I'm going through, our time together is valuable and teaches me to take time and be in tune with myself. Similarly, playing video games with my partner after a long day is a great way for me to relax.",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.943,
+            "margin": 0.148,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D16:4",
+            "session": "S31",
+            "stream": "Injected",
+            "text": "Your support means a lot. Susie really helps when times get tough. Pets have been great company. board games have also been a nice distraction.",
+            "audio": null,
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.969,
+            "margin": 0.556,
+            "stateAction": "Center fixed"
+          },
+          {
+            "id": "D16:4",
+            "session": "S32",
+            "stream": "Original",
+            "text": "Your support means a lot. Susie really helps when times get tough. Pets have been great company. Video games have also been a nice distraction.",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.941,
+            "margin": 0.146,
+            "stateAction": "Center fixed"
+          }
+        ],
+        "metrics": {
+          "structure": "3 local entities",
+          "access": "Targeted query trace",
+          "qa": "Judge: incorrect"
+        },
+        "query": {
+          "text": "What activities have been helping me stay distracted during tough times?",
+          "audio": null,
+          "assigned": true,
+          "entity": "E2",
+          "similarity": 0.825,
+          "margin": 0.255,
+          "evidence": "Spk_2 values tips for staying relaxed while dealing with challenges.",
+          "answer": "Gaming and yoga",
+          "judge": 0
+        }
+      },
+      "parakeet-update": {
+        "id": "parakeet-update",
+        "label": "Parakeet + Update",
+        "entities": [
+          {
+            "id": "spk_1",
+            "label": "E1"
+          },
+          {
+            "id": "spk_2",
+            "label": "E2"
+          },
+          {
+            "id": "spk_3",
+            "label": "E3"
+          }
+        ],
+        "entityCount": 3,
+        "turns": [
+          {
+            "id": "D2:22",
+            "session": "S3",
+            "stream": "Injected",
+            "text": " I was playing board games and my pet just slinked out of her cage and coiled up next to me - it was too funny! My second snake Seraphim did it. Look at her sly eyes!",
+            "audio": null,
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.956,
+            "margin": 0.524,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D2:22",
+            "session": "S4",
+            "stream": "Original",
+            "text": " I was playing video games and my pet just slinked out of her cage and coiled up next to me - it was too funny! My second snake Seraphim did it. Look at her sly eyes!",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.906,
+            "margin": 0.04,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D7:1",
+            "session": "S13",
+            "stream": "Original",
+            "text": "Hi Deborah, it's been a while! Since we last talked, so much has happened. Balancing engineering school with my partner's video games is quite a feat. But I'm also setting aside time for myself, doing yoga and meditation. It helps give me calm amidst the craziness.",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.981,
+            "margin": 0.196,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D7:1",
+            "session": "S14",
+            "stream": "Injected",
+            "text": "Hi Deborah, it's been a while! Since we last talked, so much has happened. Balancing engineering school with my partner's board games is quite a feat. But I'm also setting aside time for myself, doing yoga and meditation. It helps give me calm amidst the craziness.",
+            "audio": null,
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.861,
+            "margin": 0.455,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D12:6",
+            "session": "S23",
+            "stream": "Injected",
+            "text": "Even though my snakes can't chat or understand what I'm going through, our time together is valuable and teaches me to take time and be in tune with myself. Similarly, playing board games with my partner after a long day is a great way for me to relax.",
+            "audio": null,
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.959,
+            "margin": 0.529,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D12:6",
+            "session": "S24",
+            "stream": "Original",
+            "text": "Even though my snakes can't chat or understand what I'm going through, our time together is valuable and teaches me to take time and be in tune with myself. Similarly, playing video games with my partner after a long day is a great way for me to relax.",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.98,
+            "margin": 0.168,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D16:4",
+            "session": "S31",
+            "stream": "Injected",
+            "text": "Your support means a lot. Susie really helps when times get tough. Pets have been great company. board games have also been a nice distraction.",
+            "audio": null,
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.986,
+            "margin": 0.56,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D16:4",
+            "session": "S32",
+            "stream": "Original",
+            "text": "Your support means a lot. Susie really helps when times get tough. Pets have been great company. Video games have also been a nice distraction.",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.986,
+            "margin": 0.185,
+            "stateAction": "Center updated"
+          }
+        ],
+        "metrics": {
+          "structure": "3 local entities",
+          "access": "Targeted query trace",
+          "qa": "Judge: incorrect"
+        },
+        "query": {
+          "text": "What activities have been helping me stay distracted during tough times?",
+          "audio": null,
+          "assigned": true,
+          "entity": "E2",
+          "similarity": 0.86,
+          "margin": 0.334,
+          "evidence": "Spk_2 values tips for staying relaxed while dealing with challenges.",
+          "answer": "Gaming and yoga",
+          "judge": 0
+        }
+      },
+      "parakeet-gated": {
+        "id": "parakeet-gated",
+        "label": "Parakeet + Gated Update",
+        "entities": [
+          {
+            "id": "spk_1",
+            "label": "E1"
+          },
+          {
+            "id": "spk_2",
+            "label": "E2"
+          },
+          {
+            "id": "spk_3",
+            "label": "E3"
+          }
+        ],
+        "entityCount": 3,
+        "turns": [
+          {
+            "id": "D2:22",
+            "session": "S3",
+            "stream": "Injected",
+            "text": " I was playing board games and my pet just slinked out of her cage and coiled up next to me - it was too funny! My second snake Seraphim did it. Look at her sly eyes!",
+            "audio": null,
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.956,
+            "margin": 0.524,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D2:22",
+            "session": "S4",
+            "stream": "Original",
+            "text": " I was playing video games and my pet just slinked out of her cage and coiled up next to me - it was too funny! My second snake Seraphim did it. Look at her sly eyes!",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.906,
+            "margin": 0.04,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D7:1",
+            "session": "S13",
+            "stream": "Original",
+            "text": "Hi Deborah, it's been a while! Since we last talked, so much has happened. Balancing engineering school with my partner's video games is quite a feat. But I'm also setting aside time for myself, doing yoga and meditation. It helps give me calm amidst the craziness.",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.981,
+            "margin": 0.196,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D7:1",
+            "session": "S14",
+            "stream": "Injected",
+            "text": "Hi Deborah, it's been a while! Since we last talked, so much has happened. Balancing engineering school with my partner's board games is quite a feat. But I'm also setting aside time for myself, doing yoga and meditation. It helps give me calm amidst the craziness.",
+            "audio": null,
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.861,
+            "margin": 0.455,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D12:6",
+            "session": "S23",
+            "stream": "Injected",
+            "text": "Even though my snakes can't chat or understand what I'm going through, our time together is valuable and teaches me to take time and be in tune with myself. Similarly, playing board games with my partner after a long day is a great way for me to relax.",
+            "audio": null,
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.959,
+            "margin": 0.529,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D12:6",
+            "session": "S24",
+            "stream": "Original",
+            "text": "Even though my snakes can't chat or understand what I'm going through, our time together is valuable and teaches me to take time and be in tune with myself. Similarly, playing video games with my partner after a long day is a great way for me to relax.",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.98,
+            "margin": 0.168,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D16:4",
+            "session": "S31",
+            "stream": "Injected",
+            "text": "Your support means a lot. Susie really helps when times get tough. Pets have been great company. board games have also been a nice distraction.",
+            "audio": null,
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.986,
+            "margin": 0.56,
+            "stateAction": "Center updated"
+          },
+          {
+            "id": "D16:4",
+            "session": "S32",
+            "stream": "Original",
+            "text": "Your support means a lot. Susie really helps when times get tough. Pets have been great company. Video games have also been a nice distraction.",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.986,
+            "margin": 0.185,
+            "stateAction": "Center updated"
+          }
+        ],
+        "metrics": {
+          "structure": "3 local entities",
+          "access": "Targeted query trace",
+          "qa": "Judge: incorrect"
+        },
+        "query": {
+          "text": "What activities have been helping me stay distracted during tough times?",
+          "audio": null,
+          "assigned": true,
+          "entity": "E2",
+          "similarity": 0.86,
+          "margin": 0.334,
+          "evidence": "Spk_2 values tips for staying relaxed while dealing with challenges.",
+          "answer": "Gaming and yoga",
+          "judge": 0
+        }
+      },
+      "parakeet-knn": {
+        "id": "parakeet-knn",
+        "label": "Parakeet + KNN",
+        "entities": [
+          {
+            "id": "spk_1",
+            "label": "E1"
+          },
+          {
+            "id": "spk_2",
+            "label": "E2"
+          },
+          {
+            "id": "spk_3",
+            "label": "E3"
+          }
+        ],
+        "entityCount": 3,
+        "turns": [
+          {
+            "id": "D2:22",
+            "session": "S3",
+            "stream": "Injected",
+            "text": " I was playing board games and my pet just slinked out of her cage and coiled up next to me - it was too funny! My second snake Seraphim did it. Look at her sly eyes!",
+            "audio": null,
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.956,
+            "margin": 0.524,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D2:22",
+            "session": "S4",
+            "stream": "Original",
+            "text": " I was playing video games and my pet just slinked out of her cage and coiled up next to me - it was too funny! My second snake Seraphim did it. Look at her sly eyes!",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.906,
+            "margin": 0.04,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D7:1",
+            "session": "S13",
+            "stream": "Original",
+            "text": "Hi Deborah, it's been a while! Since we last talked, so much has happened. Balancing engineering school with my partner's video games is quite a feat. But I'm also setting aside time for myself, doing yoga and meditation. It helps give me calm amidst the craziness.",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.957,
+            "margin": 0.171,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D7:1",
+            "session": "S14",
+            "stream": "Injected",
+            "text": "Hi Deborah, it's been a while! Since we last talked, so much has happened. Balancing engineering school with my partner's board games is quite a feat. But I'm also setting aside time for myself, doing yoga and meditation. It helps give me calm amidst the craziness.",
+            "audio": null,
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.907,
+            "margin": 0.503,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D12:6",
+            "session": "S23",
+            "stream": "Injected",
+            "text": "Even though my snakes can't chat or understand what I'm going through, our time together is valuable and teaches me to take time and be in tune with myself. Similarly, playing board games with my partner after a long day is a great way for me to relax.",
+            "audio": null,
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.961,
+            "margin": 0.529,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D12:6",
+            "session": "S24",
+            "stream": "Original",
+            "text": "Even though my snakes can't chat or understand what I'm going through, our time together is valuable and teaches me to take time and be in tune with myself. Similarly, playing video games with my partner after a long day is a great way for me to relax.",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.959,
+            "margin": 0.121,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D16:4",
+            "session": "S31",
+            "stream": "Injected",
+            "text": "Your support means a lot. Susie really helps when times get tough. Pets have been great company. board games have also been a nice distraction.",
+            "audio": null,
+            "entity": "E3",
+            "action": "link",
+            "similarity": 0.968,
+            "margin": 0.536,
+            "stateAction": "Exemplar appended"
+          },
+          {
+            "id": "D16:4",
+            "session": "S32",
+            "stream": "Original",
+            "text": "Your support means a lot. Susie really helps when times get tough. Pets have been great company. Video games have also been a nice distraction.",
+            "audio": null,
+            "entity": "E2",
+            "action": "link",
+            "similarity": 0.975,
+            "margin": 0.13,
+            "stateAction": "Exemplar appended"
+          }
+        ],
+        "metrics": {
+          "structure": "3 local entities",
+          "access": "Targeted query trace",
+          "qa": "Judge: incorrect"
+        },
+        "query": {
+          "text": "What activities have been helping me stay distracted during tough times?",
+          "audio": null,
+          "assigned": true,
+          "entity": "E2",
+          "similarity": 0.87,
+          "margin": 0.247,
+          "evidence": "Spk_2 values tips for staying relaxed while dealing with challenges.",
+          "answer": "Gaming and yoga",
+          "judge": 0
+        }
+      }
+    },
+    "queryTranscript": "What activities have been helping me stay distracted during tough times?"
+  }
+}
