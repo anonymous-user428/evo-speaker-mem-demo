@@ -41,7 +41,15 @@ function icon(name) {
 }
 
 function getScenario() {
-  return scenarios[state.scenarioId];
+  const scenario = scenarios[state.scenarioId];
+
+  const policy = scenario.policyTraces?.[state.policyId]
+    || scenario.policyTraces?.fixed;
+
+  return {
+    ...scenario,
+    ...policy
+  };
 }
 
 function getAccessView(scenario) {
