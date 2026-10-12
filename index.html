@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An interactive trace for identity routing in shared spoken memory.">
+  <title>EvoSpeakerMem Interactive Trace</title>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="#top" aria-label="EvoSpeakerMem interactive trace">
+        <span class="brand__mark" aria-hidden="true"><i data-lucide="audio-lines"></i></span>
+        <span>
+          <strong>EvoSpeakerMem</strong>
+          <small>Interactive identity trace</small>
+        </span>
+      </a>
+      <div class="topbar__status" aria-label="Demo status">
+        <span><i data-lucide="database-zap" aria-hidden="true"></i> Annotated walkthrough</span>
+        <span><i data-lucide="shield-check" aria-hidden="true"></i> Anonymous entities</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="page-shell">
+    <section class="workspace-head" aria-labelledby="workspace-title">
+      <div>
+        <p class="eyebrow">Shared spoken memory</p>
+        <h1 id="workspace-title">Follow one turn from audio to authorized memory.</h1>
+        <p class="workspace-head__copy">Inspect how a time-varying acoustic observation is associated with a persistent local entity, then see what that association permits at query time.</p>
+      </div>
+      <div class="legend" aria-label="Trace legend">
+        <span class="legend__item"><b class="dot dot--create"></b>Create entity</span>
+        <span class="legend__item"><b class="dot dot--link"></b>Link entity</span>
+        <span class="legend__item"><b class="dot dot--risk"></b>Access risk</span>
+      </div>
+    </section>
+
+    <nav class="scenario-tabs" aria-label="Demo scenarios" role="tablist">
+      <button class="scenario-tab is-active" type="button" role="tab" aria-selected="true" data-scenario="clean">
+        <i data-lucide="sparkles" aria-hidden="true"></i>
+        <span>Clean two-speaker</span>
+      </button>
+      <button class="scenario-tab" type="button" role="tab" aria-selected="false" data-scenario="spatial">
+        <i data-lucide="waves" aria-hidden="true"></i>
+        <span>Session-shift history</span>
+      </button>
+      <button class="scenario-tab" type="button" role="tab" aria-selected="false" data-scenario="four">
+        <i data-lucide="network" aria-hidden="true"></i>
+        <span>Four-speaker conflict</span>
+      </button>
+    </nav>
+
+    <section class="scenario-banner" aria-live="polite">
+      <div>
+        <p class="eyebrow" id="scenario-kicker"></p>
+        <h2 id="scenario-title"></h2>
+      </div>
+      <p id="scenario-protocol"></p>
+    </section>
+
+    <section class="scope-strip" aria-labelledby="scope-title">
+      <div class="scope-strip__head">
+        <p class="panel__overline">Trace scope</p>
+        <h2 id="scope-title">Fixed, auditable walkthrough</h2>
+      </div>
+      <dl class="scope-grid">
+        <div>
+          <dt>Selection</dt>
+          <dd id="scope-selection"></dd>
+        </div>
+        <div>
+          <dt>Materials</dt>
+          <dd id="scope-source"></dd>
+        </div>
+        <div>
+          <dt>Evidence boundary</dt>
+          <dd id="scope-evidence"></dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="trace-grid" aria-label="Identity-routing trace">
+      <section class="panel trace-panel" aria-labelledby="timeline-title">
+        <div class="panel__header">
+          <div>
+            <p class="panel__overline">1. History write path</p>
+            <h2 id="timeline-title">Selected history excerpt</h2>
+          </div>
+          <span class="turn-count" id="turn-count"></span>
+        </div>
+        <p class="panel__description">Select a turn to inspect its transcript, fixed routing annotation, and intended memory destination.</p>
+        <div class="turn-list" id="turn-list" role="list"></div>
+      </section>
+
+      <aside class="side-stack" aria-label="Entity state">
+        <section class="panel" aria-labelledby="registry-title">
+          <div class="panel__header panel__header--compact">
+            <div>
+              <p class="panel__overline">Persistent state</p>
+              <h2 id="registry-title">Entity registry</h2>
+            </div>
+            <i data-lucide="fingerprint" aria-hidden="true"></i>
+          </div>
+          <div class="entity-list" id="entity-list"></div>
+        </section>
+
+        <section class="panel focus-panel" aria-labelledby="focus-title">
+          <div class="panel__header panel__header--compact">
+            <div>
+              <p class="panel__overline">Selected turn</p>
+              <h2 id="focus-title">Write decision</h2>
+            </div>
+            <button class="icon-button" id="jump-query" type="button" title="Jump to query-time access" aria-label="Jump to query-time access">
+              <i data-lucide="arrow-down-to-line" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div id="focus-content"></div>
+        </section>
+      </aside>
+    </section>
+
+    <section class="panel policy-panel" id="policy-panel" aria-labelledby="policy-title" hidden>
+      <div class="panel__header">
+        <div>
+          <p class="panel__overline">2. Policy-level effect</p>
+          <h2 id="policy-title">Spatial routing outcomes</h2>
+        </div>
+        <span class="source-note">Full-condition results, not metrics for this excerpt</span>
+      </div>
+      <div class="segmented-control" id="policy-control" aria-label="Select a routing policy"></div>
+      <div class="policy-result" id="policy-result"></div>
+    </section>
+
+    <section class="panel access-panel" id="query-access" aria-labelledby="access-title">
+      <div class="panel__header">
+        <div>
+          <p class="panel__overline">3. Query-time read path</p>
+          <h2 id="access-title">Identity-gated retrieval</h2>
+        </div>
+        <span class="source-note" id="access-note"></span>
+      </div>
+      <div class="access-layout">
+        <article class="query-card">
+          <div class="query-card__head">
+            <span class="query-label"><i data-lucide="mic" aria-hidden="true"></i> Spoken query</span>
+            <span class="entity-pill" id="query-requester"></span>
+          </div>
+          <blockquote id="query-text"></blockquote>
+          <audio id="query-audio" controls preload="metadata"></audio>
+        </article>
+        <article class="authorization-card" id="authorization-card">
+          <p class="card-label">Authorization</p>
+          <div class="authorization-card__state" id="authorization-state"></div>
+          <p id="authorization-copy"></p>
+        </article>
+        <article class="answer-card">
+          <p class="card-label">Retrieved evidence and answer</p>
+          <p class="evidence" id="evidence-text"></p>
+          <p class="answer" id="answer-text"></p>
+        </article>
+      </div>
+      <div class="counterfactual-control" id="counterfactual-control" hidden>
+        <div>
+          <p class="card-label">Counterfactual route</p>
+          <p>Switching the authorized entity exposes the consequence of a wrong identity link.</p>
+        </div>
+        <div class="segmented-control" id="counterfactual-options" aria-label="Select a counterfactual route"></div>
+      </div>
+    </section>
+
+    <section class="method-note" aria-label="Interpretation note">
+      <i data-lucide="info" aria-hidden="true"></i>
+      <p><strong>How to read this page:</strong> audio and transcripts are fixed materials. Turn-level entity labels illustrate the reference routing needed to preserve the stated memory boundary; they are not a browser-side replay of a model. Aggregate policy metrics are reported separately and remain the experimental evidence in the paper.</p>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
