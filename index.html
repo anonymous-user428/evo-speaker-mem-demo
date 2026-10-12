@@ -127,9 +127,9 @@
       <div class="panel__header">
         <div>
           <p class="panel__overline">2. Policy-level effect</p>
-          <h2 id="policy-title">Spatial routing outcomes</h2>
+          <h2 id="policy-title">Routing policy outcomes</h2>
         </div>
-        <span class="source-note">Full-condition results, not metrics for this excerpt</span>
+        <span class="source-note">Clean / session-shift: full-condition results; four-speaker: selected query trace</span>
       </div>
       <div class="segmented-control" id="policy-control" aria-label="Select a routing policy"></div>
       <div class="policy-result" id="policy-result"></div>
@@ -151,6 +151,7 @@
           </div>
           <blockquote id="query-text"></blockquote>
           <audio id="query-audio" controls preload="metadata"></audio>
+          <p class="source-note" id="query-audio-note" hidden>Query audio is not included for this recorded trace.</p>
         </article>
         <article class="authorization-card" id="authorization-card">
           <p class="card-label">Authorization</p>
@@ -178,7 +179,7 @@
     </section>
   </main>
 
-  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script id="lucide-script" async src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
   <script src="assets/app.js"></script>
 </body>
 </html>
