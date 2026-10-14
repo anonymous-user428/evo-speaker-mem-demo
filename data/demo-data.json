@@ -1520,10 +1520,10 @@
   },
   "spatial": {
     "kicker": "Condition B",
-    "title": "Session-shifted history with a held-fixed query",
+    "title": "Condition-shifted history with a held-fixed query",
     "protocol": "The same history text is rendered with session-dependent room, device, gain, and noise shifts. The spoken query remains clean by design, isolating the effect of history-time routing on downstream QA.",
-    "queryNote": "The same clean spoken query is paired with session-shifted history audio, isolating history-time routing effects.",
-    "selection": "The clean excerpt is paired turn-for-turn with its session-shifted history realization, so only the history recording condition changes.",
+    "queryNote": "The same clean spoken query is paired with condition-shifted history audio, isolating history-time routing effects. This is an original LoCoMo question after deterministic first-person rewriting; \"identity\" refers to the user's personal identity, not speaker routing.",
+    "selection": "The clean excerpt is paired turn-for-turn with its condition-shifted history realization, so only the history recording condition changes.",
     "source": "Fourteen shared history turns and one first-person query. Every strategy receives the same displayed text and its paired audio; only the precomputed policy decisions change.",
     "evidenceScope": "CREATE/LINK, raw policy-local spk_N IDs, representation state, query routing, retrieval, answer, and judge are taken from the selected strategy's precomputed artifacts.",
     "policyTraces": {
