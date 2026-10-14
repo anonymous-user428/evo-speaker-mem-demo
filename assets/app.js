@@ -4,6 +4,19 @@ const state = {
   policyId: "gated"
 };
 
+const policyIds = [
+  "fixed",
+  "update",
+  "gated",
+  "knn",
+  "parakeet-fixed",
+  "parakeet-update",
+  "parakeet-gated",
+  "parakeet-knn"
+];
+
+const entityColors = ["#087e8b", "#2b5c91", "#d86f2b", "#2b7a57", "#8a5a44", "#7867a6"];
+
 const dom = {
   tabs: document.querySelectorAll(".scenario-tab"),
   kicker: document.querySelector("#scenario-kicker"),
@@ -16,20 +29,18 @@ const dom = {
   turnList: document.querySelector("#turn-list"),
   entityList: document.querySelector("#entity-list"),
   focusContent: document.querySelector("#focus-content"),
-  policyPanel: document.querySelector("#policy-panel"),
   policyControl: document.querySelector("#policy-control"),
   policyResult: document.querySelector("#policy-result"),
+  queryLabel: document.querySelector("#query-label"),
   queryRequester: document.querySelector("#query-requester"),
   queryText: document.querySelector("#query-text"),
   queryAudio: document.querySelector("#query-audio"),
-  queryAudioNote: document.querySelector("#query-audio-note"),
   accessNote: document.querySelector("#access-note"),
   authorizationCard: document.querySelector("#authorization-card"),
   authorizationState: document.querySelector("#authorization-state"),
   authorizationCopy: document.querySelector("#authorization-copy"),
   evidenceText: document.querySelector("#evidence-text"),
   answerText: document.querySelector("#answer-text"),
-  counterfactualControl: document.querySelector("#counterfactual-control"),
   jumpQuery: document.querySelector("#jump-query")
 };
 
@@ -39,18 +50,31 @@ function icon(name) {
   return `<i data-lucide="${name}" aria-hidden="true"></i>`;
 }
 
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
 function getScenario() {
-  const scenario = scenarios[state.scenarioId];
-  const policies = Object.values(scenario.policyTraces);
-  const policy = scenario.policyTraces[state.policyId] || policies[0];
-  if (!policy) throw new Error("No routing policies are available for this scenario.");
-  state.policyId = policy.id;
-  state.selectedTurnIndex = Math.min(state.selectedTurnIndex, policy.turns.length - 1);
-  return { ...scenario, ...policy, policies };
+  return scenarios[state.scenarioId];
+}
+
+function getPolicy(scenario) {
+  const policies = scenario.policyTraces || {};
+  const selected = policies[state.policyId];
+  if (selected) return selected;
+
+  const [fallback] = Object.values(policies);
+  state.policyId = fallback?.id || "";
+  return fallback;
 }
 
 function formatScore(value) {
-  return typeof value === "number" ? value.toFixed(3) : "Not recorded";
+  return typeof value === "number" ? value.toFixed(3) : "—";
 }
 
 function stopActiveAudio() {
@@ -60,11 +84,25 @@ function stopActiveAudio() {
   });
 }
 
-function renderScenarioHeader(scenario) {
+function policyDescription(id) {
+  const descriptions = {
+    fixed: "The first accepted voiceprint remains the entity representation.",
+    update: "Every accepted link updates the entity center.",
+    gated: "An accepted link updates the center only when its confidence clears the update gate.",
+    knn: "The entity retains accepted historical voiceprint exemplars for top-k matching.",
+    "parakeet-fixed": "Session-local Parakeet groups are associated with a fixed global ECAPA representation.",
+    "parakeet-update": "Session-local Parakeet groups are associated while each accepted link updates the global center.",
+    "parakeet-gated": "Session-local Parakeet groups are associated with confidence-gated global center updates.",
+    "parakeet-knn": "Session-local Parakeet groups are associated with global multi-exemplar ECAPA matching."
+  };
+  return descriptions[id] || "Precomputed routing, retrieval, and evaluation result.";
+}
+
+function renderScenarioHeader(scenario, policy) {
   dom.kicker.textContent = scenario.kicker;
   dom.title.textContent = scenario.title;
   dom.protocol.textContent = scenario.protocol;
-  dom.turnCount.textContent = `${scenario.turns.length} shown turns`;
+  dom.turnCount.textContent = `${policy.turns.length} shown turns`;
 
   dom.tabs.forEach((tab) => {
     const active = tab.dataset.scenario === state.scenarioId;
@@ -80,22 +118,70 @@ function renderScope(scenario) {
   dom.scopeEvidence.textContent = scenario.evidenceScope;
 }
 
-function renderTurns(scenario) {
-  dom.turnList.innerHTML = scenario.turns.map((turn, index) => {
+function renderPolicy(scenario, policy) {
+  const policies = scenario.policyTraces || {};
+  dom.policyControl.innerHTML = policyIds
+    .filter((id) => policies[id])
+    .map((id) => {
+      const candidate = policies[id];
+      const active = id === policy.id;
+      return `<button class="policy-tab ${active ? "is-active" : ""}" type="button" role="tab" data-policy-id="${id}" aria-selected="${active}" tabindex="${active ? "0" : "-1"}">${escapeHtml(candidate.label)}</button>`;
+    })
+    .join("");
+
+  dom.policyControl.querySelectorAll("[data-policy-id]").forEach((button) => {
+    button.addEventListener("click", () => {
+      activatePolicy(button.dataset.policyId);
+    });
+  });
+
+  dom.policyResult.innerHTML = `
+    <div class="policy-summary">
+      <p class="card-label">${escapeHtml(policy.label)}</p>
+      <p>${escapeHtml(policyDescription(policy.id))}</p>
+    </div>
+    <div class="metric-cell"><p>Local entities</p><p>${escapeHtml(policy.entityCount)}</p></div>
+    <div class="metric-cell"><p>Entity structure</p><p>${escapeHtml(policy.metrics.structure)}</p></div>
+    <div class="metric-cell"><p>Private access</p><p>${escapeHtml(policy.metrics.access)}</p></div>
+    <div class="metric-cell"><p>Gated QA</p><p>${escapeHtml(policy.metrics.qa)}</p></div>`;
+}
+
+function activatePolicy(policyId) {
+  stopActiveAudio();
+  state.policyId = policyId;
+  state.selectedTurnIndex = 0;
+  render();
+}
+
+function movePolicyFocus(button, key) {
+  const buttons = Array.from(dom.policyControl.querySelectorAll("[data-policy-id]"));
+  const currentIndex = buttons.indexOf(button);
+  const nextIndex = key === "Home"
+    ? 0
+    : key === "End"
+      ? buttons.length - 1
+      : (currentIndex + (key === "ArrowRight" ? 1 : -1) + buttons.length) % buttons.length;
+  const nextButton = buttons[nextIndex];
+  activatePolicy(nextButton.dataset.policyId);
+  dom.policyControl.querySelector(`[data-policy-id="${state.policyId}"]`)?.focus();
+}
+
+function renderTurns(policy) {
+  dom.turnList.innerHTML = policy.turns.map((turn, index) => {
     const selected = index === state.selectedTurnIndex;
-    const stream = turn.stream ? `<span class="stream-label">${turn.stream}</span>` : "";
+    const stream = turn.stream ? `<span class="stream-label">${escapeHtml(turn.stream)}</span>` : "";
     return `
       <button class="turn-row ${selected ? "is-selected" : ""}" type="button" data-turn-index="${index}" role="listitem">
         <span class="turn-index">${String(index + 1).padStart(2, "0")}</span>
         <span class="turn-main">
           <span class="turn-meta">
-            <span class="session-label">${turn.session}</span>
+            <span class="session-label">${escapeHtml(turn.session)}</span>
             ${stream}
-            <span class="route-label ${turn.action}">${turn.action.toUpperCase()}</span>
+            <span class="route-label ${escapeHtml(turn.action)}">${escapeHtml(turn.action.toUpperCase())}</span>
           </span>
-          <span class="turn-text">${turn.text}</span>
+          <span class="turn-text">${escapeHtml(turn.text)}</span>
         </span>
-        <span class="turn-target">${turn.entity}</span>
+        <span class="turn-target">${escapeHtml(turn.entity)}</span>
       </button>`;
   }).join("");
 
@@ -107,87 +193,85 @@ function renderTurns(scenario) {
   });
 }
 
-function renderEntities(scenario) {
-  const activeTurn = scenario.turns[state.selectedTurnIndex];
-  const colors = ["#3158d7", "#15806c", "#a66c12", "#9754bd"];
-  dom.entityList.innerHTML = scenario.entities.map((entity, index) => `
-    <article class="entity-item ${entity.label === activeTurn.entity ? "is-focused" : ""}" style="--entity-color:${colors[index % colors.length]}">
-      <span class="entity-avatar">${entity.label}</span>
-      <span>
-        <strong>${entity.label}</strong>
-        <small>${entity.id}</small>
-      </span>
-    </article>`).join("");
+function renderEntities(policy) {
+  const activeTurn = policy.turns[state.selectedTurnIndex];
+  const occurrenceCounts = policy.turns.reduce((counts, turn) => {
+    counts[turn.entity] = (counts[turn.entity] || 0) + 1;
+    return counts;
+  }, {});
+
+  dom.entityList.innerHTML = policy.entities.map((entity, index) => {
+    const count = occurrenceCounts[entity.label] || 0;
+    const focused = entity.label === activeTurn.entity;
+    return `
+      <article class="entity-item ${focused ? "is-focused" : ""}" style="--entity-color:${entityColors[index % entityColors.length]}">
+        <span class="entity-avatar">${escapeHtml(entity.label)}</span>
+        <span>
+          <strong>${escapeHtml(entity.label)}</strong>
+          <small>${count} shown routed ${count === 1 ? "turn" : "turns"}</small>
+        </span>
+      </article>`;
+  }).join("");
 }
 
-function renderFocus(scenario) {
-  const turn = scenario.turns[state.selectedTurnIndex];
+function renderFocus(policy) {
+  const turn = policy.turns[state.selectedTurnIndex];
   const writeAction = turn.action === "create"
-    ? "The recorded route initializes a new local entity."
-    : "The recorded route links the observation to an existing local entity.";
+    ? "A new local entity is initialized for this observation."
+    : "The observation is linked to an existing local entity.";
   const audio = turn.audio
-    ? `<audio class="focus-audio" controls preload="metadata" src="${turn.audio}"></audio>`
-    : '<p class="source-note">Audio is not included for this recorded turn.</p>';
+    ? `<audio class="focus-audio" controls preload="metadata" src="${escapeHtml(turn.audio)}"></audio>`
+    : "";
   dom.focusContent.innerHTML = `
-    <span class="route-label ${turn.action}">${turn.action.toUpperCase()} → ${turn.entity}</span>
+    <span class="route-label ${escapeHtml(turn.action)}">${escapeHtml(turn.action.toUpperCase())} → ${escapeHtml(turn.entity)}</span>
     ${audio}
-    <p class="focus-copy"><strong>${turn.id}:</strong> ${writeAction} ${turn.stateAction || ""}</p>
-    <p class="source-note">Similarity: ${formatScore(turn.similarity)} · Margin: ${formatScore(turn.margin)}</p>`;
-}
-
-function renderPolicy(scenario) {
-  dom.policyPanel.hidden = scenario.policies.length === 0;
-  const selected = scenario.policies.find((policy) => policy.id === state.policyId);
-  dom.policyControl.innerHTML = scenario.policies.map((policy) => `
-    <button class="${policy.id === selected.id ? "is-active" : ""}" type="button" aria-pressed="${policy.id === selected.id}" data-policy-id="${policy.id}">${policy.label}</button>`).join("");
-  dom.policyResult.innerHTML = `
-    <div class="policy-summary">
-      <p class="card-label">${selected.label}</p>
-      <p>${selected.entityCount} local entities in the recorded history.</p>
+    <div class="route-detail-grid" aria-label="Routing detail">
+      <span><b>Similarity</b>${formatScore(turn.similarity)}</span>
+      <span><b>Margin</b>${formatScore(turn.margin)}</span>
+      <span><b>State</b>${escapeHtml(turn.stateAction)}</span>
     </div>
-    <div class="metric-cell"><p>Entity structure</p><p>${selected.metrics.structure}</p></div>
-    <div class="metric-cell"><p>Private access</p><p>${selected.metrics.access}</p></div>
-    <div class="metric-cell"><p>End-to-end utility</p><p>${selected.metrics.qa}</p></div>`;
-
-  dom.policyControl.querySelectorAll("[data-policy-id]").forEach((button) => {
-    button.addEventListener("click", () => {
-      stopActiveAudio();
-      state.policyId = button.dataset.policyId;
-      render();
-    });
-  });
+    <p class="focus-copy"><strong>${escapeHtml(turn.id)}:</strong> ${writeAction}</p>`;
 }
 
-function renderAccess(scenario) {
-  const query = scenario.query;
-  dom.queryRequester.textContent = query.assigned ? `Linked to ${query.entity}` : "Unverified speaker";
+function renderAccess(scenario, policy) {
+  const query = policy.query;
+  const isAuthorized = query.assigned === true;
+  const stateLabel = isAuthorized ? `Access authorized · ${query.entity}` : "Access withheld";
+  const routeLabel = isAuthorized ? `Assigned ${query.entity}` : "No entity assigned";
+  const authorizationCopy = isAuthorized
+    ? `The query is routed to ${query.entity} with similarity ${formatScore(query.similarity)} and margin ${formatScore(query.margin)}. Retrieval is limited to that policy-local memory partition.`
+    : `The highest routing similarity is ${formatScore(query.similarity)} with margin ${formatScore(query.margin)}, so this policy withholds personal-memory retrieval.`;
+  const judge = query.judge === 1 ? "Judge: correct" : query.judge === 0 ? "Judge: incorrect" : "No answer judged";
+
+  dom.queryLabel.innerHTML = `${icon(query.audio ? "mic" : "file-text")}<span>${query.audio ? "Spoken query" : "Query"}</span>`;
+  dom.queryRequester.textContent = routeLabel;
   dom.queryText.textContent = `“${query.text}”`;
+  dom.queryAudio.hidden = !query.audio;
   if (query.audio) {
-    if (dom.queryAudio.getAttribute("src") !== query.audio) dom.queryAudio.src = query.audio;
+    dom.queryAudio.src = query.audio;
   } else {
     dom.queryAudio.removeAttribute("src");
   }
-  dom.queryAudio.hidden = !query.audio;
-  dom.queryAudioNote.hidden = Boolean(query.audio);
   dom.accessNote.textContent = scenario.queryNote;
-  dom.authorizationCard.classList.toggle("authorization-card--safe", query.assigned);
-  dom.authorizationCard.classList.remove("authorization-card--risk");
-  dom.authorizationState.innerHTML = `${icon(query.assigned ? "fingerprint" : "shield-alert")}<span>${query.assigned ? `Linked → ${query.entity}` : "Access withheld"}</span>`;
-  dom.authorizationCopy.textContent = `${query.assigned ? "The recorded query route permits retrieval from this local entity." : "The query speaker was not verified, so personal memory retrieval is withheld."} Similarity: ${formatScore(query.similarity)}; margin: ${formatScore(query.margin)}.`;
+  dom.authorizationCard.classList.toggle("authorization-card--safe", isAuthorized);
+  dom.authorizationCard.classList.toggle("authorization-card--withheld", !isAuthorized);
+  dom.authorizationState.innerHTML = `${icon(isAuthorized ? "shield-check" : "shield-off")}<span>${escapeHtml(stateLabel)}</span>`;
+  dom.authorizationCopy.textContent = authorizationCopy;
   dom.evidenceText.textContent = query.evidence;
-  dom.answerText.textContent = query.answer;
-  dom.counterfactualControl.hidden = true;
+  dom.answerText.innerHTML = `<span class="answer-judge ${query.judge === 0 ? "is-incorrect" : ""}">${escapeHtml(judge)}</span>${escapeHtml(query.answer)}`;
 }
 
 function render() {
   const scenario = getScenario();
-  renderScenarioHeader(scenario);
+  const policy = getPolicy(scenario);
+  state.selectedTurnIndex = Math.min(state.selectedTurnIndex, policy.turns.length - 1);
+  renderScenarioHeader(scenario, policy);
   renderScope(scenario);
-  renderTurns(scenario);
-  renderEntities(scenario);
-  renderFocus(scenario);
-  renderPolicy(scenario);
-  renderAccess(scenario);
+  renderPolicy(scenario, policy);
+  renderTurns(policy);
+  renderEntities(policy);
+  renderFocus(policy);
+  renderAccess(scenario, policy);
   if (window.lucide) window.lucide.createIcons();
 }
 
@@ -200,15 +284,18 @@ function activateScenario(scenarioId) {
 }
 
 async function initialize() {
-  if (window.location.protocol === "file:") {
-    throw new Error("Open this demo through its GitHub Pages URL, or run python3 -m http.server 8000 in the demo folder and visit http://localhost:8000. Browsers block local JSON loading when index.html is opened directly.");
-  }
   const response = await fetch("data/demo-data.json");
   if (!response.ok) {
     throw new Error(`Unable to load demo data (${response.status}).`);
   }
   scenarios = await response.json();
-
+  dom.policyControl.addEventListener("keydown", (event) => {
+    const keys = ["ArrowLeft", "ArrowRight", "Home", "End"];
+    const button = event.target.closest("[data-policy-id]");
+    if (!button || !keys.includes(event.key)) return;
+    event.preventDefault();
+    movePolicyFocus(button, event.key);
+  });
   dom.tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
       activateScenario(tab.dataset.scenario);
@@ -235,14 +322,5 @@ async function initialize() {
 }
 
 initialize().catch((error) => {
-  const message = document.createElement("p");
-  message.className = "error-state";
-  message.setAttribute("role", "alert");
-  message.textContent = `Unable to start the demo. ${error.message}`;
-  document.querySelector(".page-shell").replaceChildren(message);
-});
-
-// Icons are optional: data and interactions also work if the CDN is unavailable.
-document.querySelector("#lucide-script").addEventListener("load", () => {
-  if (window.lucide) window.lucide.createIcons();
+  document.querySelector(".page-shell").innerHTML = `<p class="error-state">${escapeHtml(error.message)}</p>`;
 });

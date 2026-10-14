@@ -54,6 +54,8 @@
       </button>
     </nav>
 
+    <nav class="policy-tabs" id="policy-control" aria-label="Routing strategies" role="tablist"></nav>
+
     <section class="scenario-banner" aria-live="polite">
       <div>
         <p class="eyebrow" id="scenario-kicker"></p>
@@ -65,7 +67,7 @@
     <section class="scope-strip" aria-labelledby="scope-title">
       <div class="scope-strip__head">
         <p class="panel__overline">Trace scope</p>
-        <h2 id="scope-title">Fixed, auditable walkthrough</h2>
+        <h2 id="scope-title">Auditable policy trace</h2>
       </div>
       <dl class="scope-grid">
         <div>
@@ -92,7 +94,7 @@
           </div>
           <span class="turn-count" id="turn-count"></span>
         </div>
-        <p class="panel__description">Select a turn to inspect its transcript, fixed routing annotation, and intended memory destination.</p>
+        <p class="panel__description">Select a turn to inspect the selected policy's transcript, routing decision, and resulting local-memory destination.</p>
         <div class="turn-list" id="turn-list" role="list"></div>
       </section>
 
@@ -123,22 +125,10 @@
       </aside>
     </section>
 
-    <section class="panel policy-panel" id="policy-panel" aria-labelledby="policy-title" hidden>
-      <div class="panel__header">
-        <div>
-          <p class="panel__overline">2. Policy-level effect</p>
-          <h2 id="policy-title">Routing policy outcomes</h2>
-        </div>
-        <span class="source-note">Clean / session-shift: full-condition results; four-speaker: selected query trace</span>
-      </div>
-      <div class="segmented-control" id="policy-control" aria-label="Select a routing policy"></div>
-      <div class="policy-result" id="policy-result"></div>
-    </section>
-
     <section class="panel access-panel" id="query-access" aria-labelledby="access-title">
       <div class="panel__header">
         <div>
-          <p class="panel__overline">3. Query-time read path</p>
+          <p class="panel__overline">2. Query-time read path</p>
           <h2 id="access-title">Identity-gated retrieval</h2>
         </div>
         <span class="source-note" id="access-note"></span>
@@ -146,12 +136,11 @@
       <div class="access-layout">
         <article class="query-card">
           <div class="query-card__head">
-            <span class="query-label"><i data-lucide="mic" aria-hidden="true"></i> Spoken query</span>
+            <span class="query-label" id="query-label"><i data-lucide="mic" aria-hidden="true"></i> Spoken query</span>
             <span class="entity-pill" id="query-requester"></span>
           </div>
           <blockquote id="query-text"></blockquote>
           <audio id="query-audio" controls preload="metadata"></audio>
-          <p class="source-note" id="query-audio-note" hidden>Query audio is not included for this recorded trace.</p>
         </article>
         <article class="authorization-card" id="authorization-card">
           <p class="card-label">Authorization</p>
@@ -164,22 +153,26 @@
           <p class="answer" id="answer-text"></p>
         </article>
       </div>
-      <div class="counterfactual-control" id="counterfactual-control" hidden>
-        <div>
-          <p class="card-label">Counterfactual route</p>
-          <p>Switching the authorized entity exposes the consequence of a wrong identity link.</p>
-        </div>
-        <div class="segmented-control" id="counterfactual-options" aria-label="Select a counterfactual route"></div>
-      </div>
     </section>
 
     <section class="method-note" aria-label="Interpretation note">
       <i data-lucide="info" aria-hidden="true"></i>
-      <p><strong>How to read this page:</strong> audio and transcripts are fixed materials. Turn-level entity labels illustrate the reference routing needed to preserve the stated memory boundary; they are not a browser-side replay of a model. Aggregate policy metrics are reported separately and remain the experimental evidence in the paper.</p>
+      <p><strong>How to read this page:</strong> every strategy within a condition sees the same displayed history text and paired audio. Switching strategy changes only its precomputed CREATE/LINK decision, raw policy-local spk_N assignment, representation state, query routing, retrieval, answer, and evaluation result.</p>
+    </section>
+
+    <section class="panel policy-panel" id="policy-panel" aria-labelledby="policy-title">
+      <div class="panel__header">
+        <div>
+          <p class="panel__overline">3. Selected strategy</p>
+          <h2 id="policy-title">Routing strategy result</h2>
+        </div>
+        <span class="source-note">Trace and result switch together</span>
+      </div>
+      <div class="policy-result" id="policy-result"></div>
     </section>
   </main>
 
-  <script id="lucide-script" async src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
   <script src="assets/app.js"></script>
 </body>
 </html>

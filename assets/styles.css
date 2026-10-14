@@ -24,10 +24,6 @@
   box-sizing: border-box;
 }
 
-[hidden] {
-  display: none !important;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -203,11 +199,10 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--line);
 }
 
 .scenario-tab,
+.policy-tab,
 .segmented-control button {
   min-height: 38px;
   border: 1px solid var(--line);
@@ -229,6 +224,8 @@ button {
 
 .scenario-tab:hover,
 .scenario-tab:focus-visible,
+.policy-tab:hover,
+.policy-tab:focus-visible,
 .segmented-control button:hover,
 .segmented-control button:focus-visible {
   border-color: var(--teal);
@@ -237,10 +234,25 @@ button {
 }
 
 .scenario-tab.is-active,
+.policy-tab.is-active,
 .segmented-control button.is-active {
   background: var(--teal);
   border-color: var(--teal);
   color: #fff;
+}
+
+.policy-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 9px;
+  padding: 0 0 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.policy-tab {
+  justify-content: center;
+  font-size: 12px;
 }
 
 .scenario-banner {
@@ -483,8 +495,10 @@ button {
   place-items: center;
   background: #fff;
   color: var(--entity-color, var(--teal));
-  font-size: 12px;
+  overflow: hidden;
+  font-size: 9px;
   font-weight: 900;
+  white-space: nowrap;
 }
 
 .entity-item strong,
@@ -517,6 +531,36 @@ button {
 
 .focus-copy strong { color: var(--ink); }
 
+.route-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+  margin: 12px 0;
+}
+
+.route-detail-grid span {
+  min-width: 0;
+  padding: 7px 8px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.route-detail-grid span:last-child {
+  grid-column: span 2;
+}
+
+.route-detail-grid b {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .icon-button {
   width: 32px;
   height: 32px;
@@ -538,19 +582,12 @@ button {
 .icon-button svg { width: 16px; height: 16px; }
 
 .policy-panel {
-  margin-top: 16px;
-}
-
-.segmented-control {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  padding: 16px 18px 0;
+  margin: 16px 0;
 }
 
 .policy-result {
   display: grid;
-  grid-template-columns: minmax(210px, 0.8fr) repeat(3, minmax(120px, 0.4fr));
+  grid-template-columns: minmax(230px, 1.2fr) repeat(4, minmax(115px, 0.45fr));
   gap: 1px;
   margin-top: 16px;
   border-top: 1px solid var(--line);
@@ -630,7 +667,7 @@ blockquote {
 }
 
 .authorization-card--safe { border-top: 3px solid var(--green); }
-.authorization-card--risk { border-top: 3px solid var(--red); }
+.authorization-card--withheld { border-top: 3px solid var(--orange); }
 
 .authorization-card__state {
   display: inline-flex;
@@ -643,7 +680,7 @@ blockquote {
 
 .authorization-card__state svg { width: 19px; height: 19px; }
 .authorization-card--safe .authorization-card__state { color: var(--green); }
-.authorization-card--risk .authorization-card__state { color: var(--red); }
+.authorization-card--withheld .authorization-card__state { color: #a54c16; }
 .authorization-card p:last-child { margin: 0; color: var(--muted); font-size: 13px; }
 
 .evidence {
@@ -658,6 +695,20 @@ blockquote {
   font-size: 18px;
   font-weight: 800;
 }
+
+.answer-judge {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.answer-judge.is-incorrect { color: var(--red); }
+
+audio[hidden] { display: none; }
 
 .counterfactual-control {
   display: flex;
@@ -725,6 +776,7 @@ blockquote {
   .page-shell { padding-top: 23px; }
   .workspace-head h1 { font-size: 28px; }
   .scenario-tab { flex: 1 1 100%; justify-content: center; }
+  .policy-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .turn-row { grid-template-columns: 48px minmax(0, 1fr); }
   .turn-target { grid-column: 2; justify-self: start; }
   .side-stack,
@@ -736,6 +788,4 @@ blockquote {
   .query-card,
   .authorization-card { border-right: 0; border-bottom: 1px solid var(--line); }
   .counterfactual-control { align-items: start; flex-direction: column; }
-  .counterfactual-control .segmented-control { width: 100%; }
-  .counterfactual-control .segmented-control button { flex: 1; justify-content: center; }
 }
